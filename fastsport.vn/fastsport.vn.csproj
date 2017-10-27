@@ -238,6 +238,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
+    <Folder Include="images\HinhSP\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
