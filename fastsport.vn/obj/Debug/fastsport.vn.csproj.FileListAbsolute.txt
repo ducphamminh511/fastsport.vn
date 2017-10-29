@@ -76,3 +76,7 @@ D:\Minh Duc\FastSport.vn\fastsport.vn\fastsport.vn\obj\Debug\fastsport.vn.csproj
 D:\Minh Duc\FastSport.vn\fastsport.vn\fastsport.vn\obj\Debug\fastsport.vn.csproj.CoreCompileInputs.cache
 D:\Minh Duc\FastSport.vn\fastsport.vn\fastsport.vn\obj\Debug\fastsport.vn.dll
 D:\Minh Duc\FastSport.vn\fastsport.vn\fastsport.vn\obj\Debug\fastsport.vn.pdb
+D:\Minh Duc\FastSport.vn\fastsport.vn\fastsport.vn\bin\EntityFramework.dll
+D:\Minh Duc\FastSport.vn\fastsport.vn\fastsport.vn\bin\EntityFramework.SqlServer.dll
+D:\Minh Duc\FastSport.vn\fastsport.vn\fastsport.vn\bin\EntityFramework.xml
+D:\Minh Duc\FastSport.vn\fastsport.vn\fastsport.vn\bin\EntityFramework.SqlServer.xml
