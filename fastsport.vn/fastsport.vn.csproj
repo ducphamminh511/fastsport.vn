@@ -272,9 +272,11 @@
     <Content Include="images\w6.jpg" />
     <Content Include="images\w7.jpg" />
     <Content Include="images\w8.jpg" />
+    <Content Include="js\App\app.js" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\Controllers\Top8_Men_News_Ctrl.js" />
     <Content Include="js\easy-responsive-tabs.js" />
+    <Content Include="js\Factories\factory.js" />
     <Content Include="js\imagezoom.js" />
     <Content Include="js\jquery-2.1.4.min.js" />
     <Content Include="js\jquery-ui.js" />
@@ -1188,6 +1190,7 @@
     <Content Include="Views\Layouts\_LayoutHome.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Layouts\_LayoutDetail.cshtml" />
+    <Content Include="Views\Home\Detail.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
