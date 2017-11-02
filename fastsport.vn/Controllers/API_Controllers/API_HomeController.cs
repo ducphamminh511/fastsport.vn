@@ -70,10 +70,10 @@ namespace fastsport.vn.Controllers
                     Name = sp.Name,
                     Gia = (float)sp.Gia,
                     Sale_off = (float)sp.Sale_off,
-                    //color_id = (int)sp.color_id,
+                    color_id = (int)sp.color_id,
                     trang_thai_sp_id = (int)sp.trang_thai_sp_id,
-                    //loai_sp_id = (int)sp.loai_sp_id,
-                    //size_id = (int)sp.size_id,
+                    loai_sp_id = (int)sp.loai_sp_id,
+                    size_id = (int)sp.size_id,
                     Hinh_1 = sp.Hinh_1,
                     Hinh_2 = sp.Hinh_2,
                     Hinh_3 = sp.Hinh_3,
@@ -84,7 +84,7 @@ namespace fastsport.vn.Controllers
                     Hinh_8 = sp.Hinh_8,
                     Hinh_9 = sp.Hinh_9,
                     Hinh_10 = sp.Hinh_10,
-                    //nhom_sp_id = (int)sp.nhom_sp_id,
+                    nhom_sp_id = (int)sp.nhom_sp_id,
                 };
                 return new API_Results
                 {
