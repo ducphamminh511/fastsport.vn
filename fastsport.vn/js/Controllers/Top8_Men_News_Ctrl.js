@@ -1,9 +1,22 @@
-﻿app.controller('MenNewController', function ($scope, $http, MenNewFactory) {
+﻿var app = angular.module('Top8_Men_News', [])
+app.factory('MenNewFactory', function ($http) {
+    var fac = {}
+    fac.Get8MenNews = function () {
+        return $http.get('http://localhost:63263/sanpham/get8newsmen');
+    }
+    fac.GetByID = function (id) {
+        return $http.get('http://localhost:63263/sanpham/' + id)
+    }
+    return fac;
+});
+app.controller('MenNewController', function ($scope, $http, MenNewFactory) {
+    
     $scope.results = [];
 
-    $scope.GetProduct = function () {
+    //$scope.GetProduct = function () {
         MenNewFactory.Get8MenNews().then(function (response) {
             var res = response.data;
+            //$scope.results = res;
             for (let i = 0; i <= res.data.length; i++) {
                 (function (i) {
                     var result = {};
@@ -31,13 +44,14 @@
                 })(i);
             };
         });
-    };
+    //};
     $scope.GetProductByID = function (id) {
         MenNewFactory.GetByID(id).then(function (response) {
             var res = response.data;
             for (let i = 0; i <= res.data.length; i++) {
                 (function (i) {
                     var result = {};
+                    var dem = 0;
                     result.ID = res.data[i].ID;
                     result.Code = res.data[i].Code;
                     result.Name = res.data[i].Name;
@@ -58,6 +72,12 @@
                     result.Hinh_8 = res.data[i].Hinh_8;
                     result.Hinh_9 = res.data[i].Hinh_9;
                     result.Hinh_10 = res.data[i].Hinh_10;
+                    for (var j = 1; j <= 10; j++)
+                    {
+                        if (res.data[i].Hinh_[j] == null)
+                            dem = dem++;
+                    }
+                    result.dem = dem;
                     $scope.results.push(result);
                 })(i);
             };
