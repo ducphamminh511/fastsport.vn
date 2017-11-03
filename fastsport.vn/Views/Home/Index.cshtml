@@ -5,6 +5,8 @@
 }
 @section scripts {
     <script src="~/Scripts/angular.js"></script>
+    @*<script src="~/js/App/app.js"></script>
+    <script src="~/js/Factories/factory.js"></script>*@
     <script src="~/js/Controllers/Top8_Men_News_Ctrl.js"></script>
 }
 <div ng-app="Top8_Men_News">
@@ -19,7 +21,7 @@
                             <img src="~/images/HinhSP/{{i.Hinh_2}}" alt="{{i.Name}}" class="pro-image-back">
                             <div class="men-cart-pro">
                                 <div class="inner-men-cart-pro">
-                                    <a href="single.html" class="link-product-add-cart">Chi Tiết</a>
+                                    <a href="@Url.Action("Detail", "Home")" class="link-product-add-cart" ng-click="GetProductByID(i.ID)">Chi Tiết</a>
                                 </div>
                             </div>
                             <span class="product-new-top">New</span>
