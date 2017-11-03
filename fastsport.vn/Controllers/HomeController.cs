@@ -13,7 +13,7 @@ namespace fastsport.vn.Controllers
         {
             return View();
         }
-        public ActionResult Detail(int id)
+        public ActionResult Detail()
         {
             return View();
         }
