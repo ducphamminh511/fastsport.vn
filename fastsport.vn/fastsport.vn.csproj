@@ -274,9 +274,12 @@
     <Content Include="images\w8.jpg" />
     <Content Include="js\App\app.js" />
     <Content Include="js\bootstrap.js" />
+    <Content Include="js\Constant\HostConfig.js" />
+    <Content Include="js\Controllers\ProductDetail.js" />
     <Content Include="js\Controllers\Top8_Men_News_Ctrl.js" />
     <Content Include="js\easy-responsive-tabs.js" />
     <Content Include="js\Factories\factory.js" />
+    <Content Include="js\Factories\ProductService.js" />
     <Content Include="js\imagezoom.js" />
     <Content Include="js\jquery-2.1.4.min.js" />
     <Content Include="js\jquery-ui.js" />
@@ -288,6 +291,10 @@
     <Content Include="js\modernizr.custom.js" />
     <Content Include="js\move-top.js" />
     <Content Include="js\responsiveslides.min.js" />
+    <Content Include="js\Routes\HomeRoute.js" />
+    <Content Include="js\Routes\ProductDetailRoutes.js" />
+    <Content Include="js\Template\Home.html" />
+    <Content Include="js\Template\ProductDetail.html" />
     <Content Include="Models\Fastsportvn_Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Fastsportvn_Model.Context.cs</LastGenOutput>
