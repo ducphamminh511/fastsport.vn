@@ -1,4 +1,34 @@
-﻿<div class="banner-bootom-w3-agileits">
+﻿<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+<link href="css/font-awesome.css" rel="stylesheet">
+<link href="css/easy-responsive-tabs.css" rel='stylesheet' type='text/css' />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- script for responsive tabs -->
+<script src="js/easy-responsive-tabs.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#horizontalTab').easyResponsiveTabs({
+            type: 'default', //Types: default, vertical, accordion
+            width: 'auto', //auto or any width like 600px
+            fit: true,   // 100% fit in a container
+            closed: 'accordion', // Start closed if in accordion view
+            activate: function (event) { // Callback function if tab is switched
+                var $tab = $(this);
+                var $info = $('#tabInfo');
+                var $name = $('span', $info);
+                $name.text($tab.text());
+                $info.show();
+            }
+        });
+        $('#verticalTab').easyResponsiveTabs({
+            type: 'vertical',
+            width: 'auto',
+            fit: true
+        });
+    });
+</script>
+
+<div class="banner-bootom-w3-agileits">
     <div class="container">
         <div class="col-md-4 single-right-left ">
             <div class="grid images_3_of_2">
@@ -11,29 +41,29 @@
                         <li ng-if="productDetail.Hinh_2" data-thumb="/images/HinhSP/{{productDetail.Hinh_2}}">
                             <div class="thumb-image"> <img src="/images/HinhSP/{{productDetail.Hinh_2}}" data-imagezoom="true" class="img-responsive"> </div>
                         </li>
-                        <li ng-if="productDetail.Hinh_3" data-thumb="~/images/HinhSP/{{productDetail.Hinh_3}}">
-                            <div class="thumb-image"> <img src="~/images/HinhSP/{{productDetail.Hinh_3}}" data-imagezoom="true" class="img-responsive"> </div>
+                        <li ng-if="productDetail.Hinh_3" data-thumb="/images/HinhSP/{{productDetail.Hinh_3}}">
+                            <div class="thumb-image"> <img src="/images/HinhSP/{{productDetail.Hinh_3}}" data-imagezoom="true" class="img-responsive"> </div>
                         </li>
-                        <li ng-if="productDetail.Hinh_4" data-thumb="~/images/HinhSP/{{productDetail.Hinh_4}}">
-                            <div class="thumb-image"> <img src="~/images/HinhSP/{{productDetail.Hinh_4}}" data-imagezoom="true" class="img-responsive"> </div>
+                        <li ng-if="productDetail.Hinh_4" data-thumb="/images/HinhSP/{{productDetail.Hinh_4}}">
+                            <div class="thumb-image"> <img src="/images/HinhSP/{{productDetail.Hinh_4}}" data-imagezoom="true" class="img-responsive"> </div>
                         </li>
-                        <li ng-if="productDetail.Hinh_5" data-thumb="~/images/HinhSP/{{productDetail.Hinh_5}}">
-                            <div class="thumb-image"> <img src="~/images/HinhSP/{{productDetail.Hinh_5}}" data-imagezoom="true" class="img-responsive"> </div>
+                        <li ng-if="productDetail.Hinh_5" data-thumb="/images/HinhSP/{{productDetail.Hinh_5}}">
+                            <div class="thumb-image"> <img src="/images/HinhSP/{{productDetail.Hinh_5}}" data-imagezoom="true" class="img-responsive"> </div>
                         </li>
-                        <li ng-if="productDetail.Hinh_6" data-thumb="~/images/HinhSP/{{productDetail.Hinh_6}}">
-                            <div class="thumb-image"> <img src="~/images/HinhSP/{{productDetail.Hinh_6}}" data-imagezoom="true" class="img-responsive"> </div>
+                        <li ng-if="productDetail.Hinh_6" data-thumb="/images/HinhSP/{{productDetail.Hinh_6}}">
+                            <div class="thumb-image"> <img src="/images/HinhSP/{{productDetail.Hinh_6}}" data-imagezoom="true" class="img-responsive"> </div>
                         </li>
-                        <li ng-if="productDetail.Hinh_7" data-thumb="~/images/HinhSP/{{productDetail.Hinh_7}}">
-                            <div class="thumb-image"> <img src="~/images/HinhSP/{{productDetail.Hinh_7}}" data-imagezoom="true" class="img-responsive"> </div>
+                        <li ng-if="productDetail.Hinh_7" data-thumb="/images/HinhSP/{{productDetail.Hinh_7}}">
+                            <div class="thumb-image"> <img src="/images/HinhSP/{{productDetail.Hinh_7}}" data-imagezoom="true" class="img-responsive"> </div>
                         </li>
-                        <li ng-if="productDetail.Hinh_8" data-thumb="~/images/HinhSP/{{productDetail.Hinh_8}}">
-                            <div class="thumb-image"> <img src="~/images/HinhSP/{{productDetail.Hinh_8}}" data-imagezoom="true" class="img-responsive"> </div>
+                        <li ng-if="productDetail.Hinh_8" data-thumb="/images/HinhSP/{{productDetail.Hinh_8}}">
+                            <div class="thumb-image"> <img src="/images/HinhSP/{{productDetail.Hinh_8}}" data-imagezoom="true" class="img-responsive"> </div>
                         </li>
-                        <li ng-if="productDetail.Hinh_9" data-thumb="~/images/HinhSP/{{productDetail.Hinh_9}}">
-                            <div class="thumb-image"> <img src="~/images/HinhSP/{{productDetail.Hinh_9}}" data-imagezoom="true" class="img-responsive"> </div>
+                        <li ng-if="productDetail.Hinh_9" data-thumb="/images/HinhSP/{{productDetail.Hinh_9}}">
+                            <div class="thumb-image"> <img src="/images/HinhSP/{{productDetail.Hinh_9}}" data-imagezoom="true" class="img-responsive"> </div>
                         </li>
-                        <li ng-if="productDetail.Hinh_10" data-thumb="~/images/HinhSP/{{productDetail.Hinh_10}}">
-                            <div class="thumb-image"> <img src="~/images/HinhSP/{{productDetail.Hinh_10}}" data-imagezoom="true" class="img-responsive"> </div>
+                        <li ng-if="productDetail.Hinh_10" data-thumb="/images/HinhSP/{{productDetail.Hinh_10}}">
+                            <div class="thumb-image"> <img src="/images/HinhSP/{{productDetail.Hinh_10}}" data-imagezoom="true" class="img-responsive"> </div>
                         </li>
                     </ul>
                     <div class="clearfix"></div>
@@ -107,35 +137,8 @@
                 </div>
 
             </div>
-            <ul class="social-nav model-3d-0 footer-social w3_agile_social single_page_w3ls">
-                <li class="share">Share On : </li>
-                <li>
-                    <a href="#" class="facebook">
-                        <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-                        <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="twitter">
-                        <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-                        <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="instagram">
-                        <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                        <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="pinterest">
-                        <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                        <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-                    </a>
-                </li>
-            </ul>
-
-        </div>
+            <div class="fb-share-button" data-href="https://www.facebook.com/commerce/products/1341187095991102/" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/commerce/products/1341187095991102/">Share</a></div>
+            </div>
         <div class="clearfix"> </div>
         <!-- /new_arrivals -->
         <div class="responsive_tabs_agileits">
@@ -161,11 +164,9 @@
                         <div class="single_page_agile_its_w3ls">
                             <div class="bootstrap-tab-text-grids">
                                 <div class="bootstrap-tab-text-grid">
-                                    <div class="bootstrap-tab-text-grid-left">
-                                        <img src="images/t1.jpg" alt=" " class="img-responsive">
-                                    </div>
+
                                     <div class="bootstrap-tab-text-grid-right">
-                                        <ul>
+                                        <!--<ul>
                                             <li><a href="#">Admin</a></li>
                                             <li><a href="#"><i class="fa fa-reply-all" aria-hidden="true"></i> Reply</a></li>
                                         </ul>
@@ -173,19 +174,12 @@
                                             Lorem ipsum dolor sit amet, consectetur adipisicing elPellentesque vehicula augue eget.Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
                                             suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem
                                             vel eum iure reprehenderit.
-                                        </p>
+                                        </p>-->
+                                        <div class="fb-comments" data-href="https://localhost:44371/#!/Home/Detail/{{productDetail.ID}}" data-numposts="5"></div>
                                     </div>
                                     <div class="clearfix"> </div>
                                 </div>
-                                <div class="add-review">
-                                    <h4>add a review</h4>
-                                    <form action="#" method="post">
-                                        <input type="text" name="Name" required="Name">
-                                        <input type="email" name="Email" required="Email">
-                                        <textarea name="Message" required=""></textarea>
-                                        <input type="submit" value="SEND">
-                                    </form>
-                                </div>
+
                             </div>
 
                         </div>
@@ -367,3 +361,27 @@
         </div>
     </div>
 </div>
+<!--Comment facebook-->
+<div id="fb-root"></div>
+<script>
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10&appId=871503656351553';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+<!--//Comment facebook-->
+<!--Share facebook-->
+
+<div id="fb-root"></div>
+<script>
+(function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10&appId=871503656351553';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+<!--//Share facebook-->

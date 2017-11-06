@@ -587,27 +587,7 @@
     <a href="#home" class="scroll" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
     <!-- js -->
     @RenderSection("scripts", required: false)
-    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
-    <!-- //js -->
-    <script src="js/modernizr.custom.js"></script>
-    <!-- Custom-JavaScript-File-Links -->
-    <!-- cart-js -->
-    <script src="js/minicart.min.js"></script>
-    <script>
-        // Mini Cart
-        paypal.minicart.render({
-            action: '#'
-        });
-
-        if (~window.location.search.indexOf('reset=true')) {
-            paypal.minicart.reset();
-        }
-    </script>
-
-    <!-- //cart-js -->
-    <!-- single -->
-    <script src="js/imagezoom.js"></script>
-    <!-- single -->
+    
     <!-- script for responsive tabs -->
     <script src="js/easy-responsive-tabs.js"></script>
     <script>
@@ -632,18 +612,7 @@
             });
         });
     </script>
-    <!-- FlexSlider -->
-    <script src="js/jquery.flexslider.js"></script>
-    <script>
-        // Can also be used with $(document).ready()
-        $(window).load(function () {
-            $('.flexslider').flexslider({
-                animation: "slide",
-                controlNav: "thumbnails"
-            });
-        });
-    </script>
-    <!-- //FlexSlider-->
+    
     <!-- //script for responsive tabs -->
     <!-- start-smoth-scrolling -->
     <script type="text/javascript" src="js/move-top.js"></script>
