@@ -9,7 +9,7 @@ namespace fastsport.vn.Controllers
     public class HomeController : Controller
     {
         // GET: Home
-        //[RequireHttps]
+        [RequireHttps]
         public ActionResult Index()
         {
             return View();
