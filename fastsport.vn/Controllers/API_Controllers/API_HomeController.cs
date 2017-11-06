@@ -12,6 +12,7 @@ namespace fastsport.vn.Controllers
     [RoutePrefix("sanpham")]
     public class API_HomeController : ApiController
     {
+        
         FastSportEntities db = new FastSportEntities();
         [Route("")]
         public API_Results GetAll()

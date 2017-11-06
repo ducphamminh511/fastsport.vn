@@ -2,10 +2,10 @@
     angular.module('Top8_Men_News').factory('MenNewFactory', function ($http) {
         var fac = {}
         fac.Get8MenNews = function () {
-            return $http.get('http://localhost:63263/sanpham/get8newsmen');
+            return $http.get('https://localhost:44371/sanpham/get8newsmen');
         }
         fac.GetByID = function (id) {
-            return $http.get('http://localhost:63263/sanpham/' + id)
+            return $http.get('https://localhost:44371/sanpham/' + id)
         }
         return fac;
     });
