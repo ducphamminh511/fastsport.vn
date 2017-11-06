@@ -162,3 +162,12 @@ D:\Minh Duc\FastSport.vn\fastsport_ver_1.1\fastsport.vn\fastsport.vn\obj\Debug\f
 D:\Minh Duc\FastSport.vn\fastsport_ver_1.1\fastsport.vn\fastsport.vn\obj\Debug\fastsport.vn.csproj.CoreCompileInputs.cache
 D:\Minh Duc\FastSport.vn\fastsport_ver_1.1\fastsport.vn\fastsport.vn\obj\Debug\fastsport.vn.dll
 D:\Minh Duc\FastSport.vn\fastsport_ver_1.1\fastsport.vn\fastsport.vn\obj\Debug\fastsport.vn.pdb
+D:\Minh Duc\FastSport.vn\fastsport_ver_1.1\fastsport.vn\fastsport.vn\bin\Microsoft.Owin.dll
+D:\Minh Duc\FastSport.vn\fastsport_ver_1.1\fastsport.vn\fastsport.vn\bin\Microsoft.Owin.Security.dll
+D:\Minh Duc\FastSport.vn\fastsport_ver_1.1\fastsport.vn\fastsport.vn\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Minh Duc\FastSport.vn\fastsport_ver_1.1\fastsport.vn\fastsport.vn\bin\Microsoft.Owin.Security.Google.dll
+D:\Minh Duc\FastSport.vn\fastsport_ver_1.1\fastsport.vn\fastsport.vn\bin\Owin.dll
+D:\Minh Duc\FastSport.vn\fastsport_ver_1.1\fastsport.vn\fastsport.vn\bin\Microsoft.Owin.xml
+D:\Minh Duc\FastSport.vn\fastsport_ver_1.1\fastsport.vn\fastsport.vn\bin\Microsoft.Owin.Security.xml
+D:\Minh Duc\FastSport.vn\fastsport_ver_1.1\fastsport.vn\fastsport.vn\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Minh Duc\FastSport.vn\fastsport_ver_1.1\fastsport.vn\fastsport.vn\bin\Microsoft.Owin.Security.Google.xml

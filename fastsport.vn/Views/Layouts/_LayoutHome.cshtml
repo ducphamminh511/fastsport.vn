@@ -390,7 +390,7 @@
                 <p>Theo dõi chúng tôi tại:</p>
                 <ul class="social-nav model-3d-0 footer-social w3_agile_social two">
                     <li>
-                        <a href="#" class="facebook">
+                        <a href="https://www.facebook.com/fastsport.vn/" class="facebook">
                             <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
                             <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div>
                         </a>
@@ -428,7 +428,7 @@
                         </ul>
                     </div>
 
-                    <div class="col-md-5 sign-gd-two">
+                    <div class="col-md-4 sign-gd-two">
                         <h4><span>Thông Tin</span> Cửa Hàng</h4>
                         <div class="w3-address">
                             <div class="w3-address-grid">
@@ -466,19 +466,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3 sign-gd flickr-post">
-                        <h4>Flickr <span>Posts</span></h4>
-                        <ul>
-                            <li><a href="single.html"><img src="images/t1.jpg" alt=" " class="img-responsive" /></a></li>
-                            <li><a href="single.html"><img src="images/t2.jpg" alt=" " class="img-responsive" /></a></li>
-                            <li><a href="single.html"><img src="images/t3.jpg" alt=" " class="img-responsive" /></a></li>
-                            <li><a href="single.html"><img src="images/t4.jpg" alt=" " class="img-responsive" /></a></li>
-                            <li><a href="single.html"><img src="images/t1.jpg" alt=" " class="img-responsive" /></a></li>
-                            <li><a href="single.html"><img src="images/t2.jpg" alt=" " class="img-responsive" /></a></li>
-                            <li><a href="single.html"><img src="images/t3.jpg" alt=" " class="img-responsive" /></a></li>
-                            <li><a href="single.html"><img src="images/t2.jpg" alt=" " class="img-responsive" /></a></li>
-                            <li><a href="single.html"><img src="images/t4.jpg" alt=" " class="img-responsive" /></a></li>
-                        </ul>
+                    <div class="col-md-4 sign-gd flickr-post">
+                        <div class="fb-page" data-href="https://www.facebook.com/fastsport.vn/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/fastsport.vn/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/fastsport.vn/">FastSport.vn</a></blockquote></div>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -565,8 +554,9 @@
     </div>
     <!-- //login -->
     <a href="#home" class="scroll" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-
-    <!-- js -->
+    
+ 
+   
     <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
     <!-- //js -->
     <script src="js/modernizr.custom.js"></script>
@@ -585,14 +575,23 @@
     </script>
 
     <!-- //cart-js -->
-
-    <!-- stats -->
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/jquery.countup.js"></script>
+    <!-- single -->
+    <script src="js/imagezoom.js"></script>
+    <!-- single -->
+    
+    <!-- FlexSlider -->
+    <script src="js/jquery.flexslider.js"></script>
     <script>
-        $('.counter').countUp();
+        // Can also be used with $(document).ready()
+        $(window).load(function () {
+            $('.flexslider').flexslider({
+                animation: "slide",
+                controlNav: "thumbnails"
+            });
+        });
     </script>
-    <!-- //stats -->
+    <!-- //FlexSlider-->
+    <!-- //script for responsive tabs -->
     <!-- start-smoth-scrolling -->
     <script type="text/javascript" src="js/move-top.js"></script>
     <script type="text/javascript" src="js/jquery.easing.min.js"></script>
@@ -647,6 +646,16 @@
     <script src="~/js/Controllers/Top8_Men_News_Ctrl.js"></script>
     <script src="~/js/Routes/ProductDetailRoutes.js"></script>
     <script src="~/js/Controllers/ProductDetail.js"></script>
+    <div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10&appId=871503656351553';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
     
 </body>
 </html>
