@@ -1,1 +1,3 @@
-﻿var app = angular.module('Top8_Men_News', [])
+﻿angular.module('Top8_Men_News', [
+    'ngRoute'
+]);
