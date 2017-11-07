@@ -171,3 +171,11 @@ D:\Minh Duc\FastSport.vn\fastsport_ver_1.1\fastsport.vn\fastsport.vn\bin\Microso
 D:\Minh Duc\FastSport.vn\fastsport_ver_1.1\fastsport.vn\fastsport.vn\bin\Microsoft.Owin.Security.xml
 D:\Minh Duc\FastSport.vn\fastsport_ver_1.1\fastsport.vn\fastsport.vn\bin\Microsoft.Owin.Security.Facebook.xml
 D:\Minh Duc\FastSport.vn\fastsport_ver_1.1\fastsport.vn\fastsport.vn\bin\Microsoft.Owin.Security.Google.xml
+D:\Minh Duc\FastSport.vn\fastsport_ver_1.1\fastsport.vn\fastsport.vn\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Minh Duc\FastSport.vn\fastsport_ver_1.1\fastsport.vn\fastsport.vn\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Minh Duc\FastSport.vn\fastsport_ver_1.1\fastsport.vn\fastsport.vn\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Minh Duc\FastSport.vn\fastsport_ver_1.1\fastsport.vn\fastsport.vn\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Minh Duc\FastSport.vn\fastsport_ver_1.1\fastsport.vn\fastsport.vn\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Minh Duc\FastSport.vn\fastsport_ver_1.1\fastsport.vn\fastsport.vn\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Minh Duc\FastSport.vn\fastsport_ver_1.1\fastsport.vn\fastsport.vn\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Minh Duc\FastSport.vn\fastsport_ver_1.1\fastsport.vn\fastsport.vn\bin\Microsoft.Owin.Security.OAuth.xml
