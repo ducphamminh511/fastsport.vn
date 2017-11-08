@@ -21,7 +21,6 @@ namespace fastsport.vn.Models
             this.chi_tiet_hoa_don = new HashSet<chi_tiet_hoa_don>();
             this.don_dat_hang = new HashSet<don_dat_hang>();
             this.hoa_don = new HashSet<hoa_don>();
-            this.hoa_don1 = new HashSet<hoa_don>();
             this.chi_tiet_don_dat_hang = new HashSet<chi_tiet_don_dat_hang>();
         }
     
@@ -41,8 +40,6 @@ namespace fastsport.vn.Models
         public virtual ICollection<don_dat_hang> don_dat_hang { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<hoa_don> hoa_don { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<hoa_don> hoa_don1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<chi_tiet_don_dat_hang> chi_tiet_don_dat_hang { get; set; }
     }
