@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="fastsport_dbModelStoreContainer" CdmEntityContainer="fastsport_dbEntities">
+    <EntitySetMapping Name="abouts">
+      <EntityTypeMapping TypeName="fastsport_dbModel.about">
+        <MappingFragment StoreEntitySet="about">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="dia_chi" ColumnName="dia_chi" />
+          <ScalarProperty Name="facebook" ColumnName="facebook" />
+          <ScalarProperty Name="instagram" ColumnName="instagram" />
+          <ScalarProperty Name="youtube" ColumnName="youtube" />
+          <ScalarProperty Name="shopee" ColumnName="shopee" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="account_admin">
+      <EntityTypeMapping TypeName="fastsport_dbModel.account_admin">
+        <MappingFragment StoreEntitySet="account_admin">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="login_id" ColumnName="login_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="passwords" ColumnName="passwords" />
+          <ScalarProperty Name="ngay_sinh" ColumnName="ngay_sinh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="account_customer">
+      <EntityTypeMapping TypeName="fastsport_dbModel.account_customer">
+        <MappingFragment StoreEntitySet="account_customer">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="login_id" ColumnName="login_id" />
+          <ScalarProperty Name="passwords" ColumnName="passwords" />
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="chi_tiet_hoa_don">
+      <EntityTypeMapping TypeName="fastsport_dbModel.chi_tiet_hoa_don">
+        <MappingFragment StoreEntitySet="chi_tiet_hoa_don">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ngay_lap_hd" ColumnName="ngay_lap_hd" />
+          <ScalarProperty Name="hoa_don_id" ColumnName="hoa_don_id" />
+          <ScalarProperty Name="san_pham_id" ColumnName="san_pham_id" />
+          <ScalarProperty Name="loai_sp_id" ColumnName="loai_sp_id" />
+          <ScalarProperty Name="size_id" ColumnName="size_id" />
+          <ScalarProperty Name="color_id" ColumnName="color_id" />
+          <ScalarProperty Name="don_dh_id" ColumnName="don_dh_id" />
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="colors">
+      <EntityTypeMapping TypeName="fastsport_dbModel.color">
+        <MappingFragment StoreEntitySet="color">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Color1" ColumnName="Color" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="don_dat_hang">
+      <EntityTypeMapping TypeName="fastsport_dbModel.don_dat_hang">
+        <MappingFragment StoreEntitySet="don_dat_hang">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Dia_chi_nhan_hang" ColumnName="Dia_chi_nhan_hang" />
+          <ScalarProperty Name="Ghi_chu" ColumnName="Ghi_chu" />
+          <ScalarProperty Name="Thanh_tien" ColumnName="Thanh_tien" />
+          <ScalarProperty Name="ngay_lap_dh" ColumnName="ngay_lap_dh" />
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+          <ScalarProperty Name="trang_thai_don_dh_id" ColumnName="trang_thai_don_dh_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hoa_don">
+      <EntityTypeMapping TypeName="fastsport_dbModel.hoa_don">
+        <MappingFragment StoreEntitySet="hoa_don">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="don_dh_id" ColumnName="don_dh_id" />
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+          <ScalarProperty Name="trang_thang_don_dh_id" ColumnName="trang_thang_don_dh_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="khach_hang">
+      <EntityTypeMapping TypeName="fastsport_dbModel.khach_hang">
+        <MappingFragment StoreEntitySet="khach_hang">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name_kh" ColumnName="Name_kh" />
+          <ScalarProperty Name="Dia_chi" ColumnName="Dia_chi" />
+          <ScalarProperty Name="Dien_thoai" ColumnName="Dien_thoai" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="ngay_sinh" ColumnName="ngay_sinh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="loai_san_pham">
+      <EntityTypeMapping TypeName="fastsport_dbModel.loai_san_pham">
+        <MappingFragment StoreEntitySet="loai_san_pham">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="nhom_sp_id" ColumnName="nhom_sp_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="nhom_sp">
+      <EntityTypeMapping TypeName="fastsport_dbModel.nhom_sp">
+        <MappingFragment StoreEntitySet="nhom_sp">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="san_pham">
+      <EntityTypeMapping TypeName="fastsport_dbModel.san_pham">
+        <MappingFragment StoreEntitySet="san_pham">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Gia" ColumnName="Gia" />
+          <ScalarProperty Name="Sale_off" ColumnName="Sale_off" />
+          <ScalarProperty Name="color_id" ColumnName="color_id" />
+          <ScalarProperty Name="trang_thai_sp_id" ColumnName="trang_thai_sp_id" />
+          <ScalarProperty Name="loai_sp_id" ColumnName="loai_sp_id" />
+          <ScalarProperty Name="size_id" ColumnName="size_id" />
+          <ScalarProperty Name="Hinh_1" ColumnName="Hinh_1" />
+          <ScalarProperty Name="Hinh_2" ColumnName="Hinh_2" />
+          <ScalarProperty Name="Hinh_3" ColumnName="Hinh_3" />
+          <ScalarProperty Name="Hinh_4" ColumnName="Hinh_4" />
+          <ScalarProperty Name="Hinh_5" ColumnName="Hinh_5" />
+          <ScalarProperty Name="Hinh_6" ColumnName="Hinh_6" />
+          <ScalarProperty Name="Hinh_7" ColumnName="Hinh_7" />
+          <ScalarProperty Name="Hinh_8" ColumnName="Hinh_8" />
+          <ScalarProperty Name="Hinh_9" ColumnName="Hinh_9" />
+          <ScalarProperty Name="Hinh_10" ColumnName="Hinh_10" />
+          <ScalarProperty Name="nhom_sp_id" ColumnName="nhom_sp_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sizes">
+      <EntityTypeMapping TypeName="fastsport_dbModel.size">
+        <MappingFragment StoreEntitySet="size">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Size1" ColumnName="Size" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="trang_thai_ddh">
+      <EntityTypeMapping TypeName="fastsport_dbModel.trang_thai_ddh">
+        <MappingFragment StoreEntitySet="trang_thai_ddh">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="trang_thai_sp">
+      <EntityTypeMapping TypeName="fastsport_dbModel.trang_thai_sp">
+        <MappingFragment StoreEntitySet="trang_thai_sp">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="chi_tiet_don_dat_hang">
+      <EntityTypeMapping TypeName="fastsport_dbModel.chi_tiet_don_dat_hang">
+        <MappingFragment StoreEntitySet="chi_tiet_don_dat_hang">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Don_gia" ColumnName="Don_gia" />
+          <ScalarProperty Name="Thanh_tien" ColumnName="Thanh_tien" />
+          <ScalarProperty Name="Ghi_chu" ColumnName="Ghi_chu" />
+          <ScalarProperty Name="don_dh_id" ColumnName="don_dh_id" />
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+          <ScalarProperty Name="san_pham_id" ColumnName="san_pham_id" />
+          <ScalarProperty Name="loai_sp_id" ColumnName="loai_sp_id" />
+          <ScalarProperty Name="size_id" ColumnName="size_id" />
+          <ScalarProperty Name="color_id" ColumnName="color_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="database_firewall_rules">
+      <EntityTypeMapping TypeName="fastsport_dbModel.database_firewall_rules">
+        <MappingFragment StoreEntitySet="database_firewall_rules">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="start_ip_address" ColumnName="start_ip_address" />
+          <ScalarProperty Name="end_ip_address" ColumnName="end_ip_address" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="modify_date" ColumnName="modify_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

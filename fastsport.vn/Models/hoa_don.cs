@@ -30,7 +30,6 @@ namespace fastsport.vn.Models
         public virtual ICollection<chi_tiet_hoa_don> chi_tiet_hoa_don { get; set; }
         public virtual don_dat_hang don_dat_hang { get; set; }
         public virtual khach_hang khach_hang { get; set; }
-        public virtual khach_hang khach_hang1 { get; set; }
         public virtual trang_thai_ddh trang_thai_ddh { get; set; }
     }
 }

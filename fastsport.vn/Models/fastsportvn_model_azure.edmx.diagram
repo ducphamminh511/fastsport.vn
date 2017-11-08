@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2816b581738842498ee41cc4a22f34dc" Name="Diagram1">
+        <EntityTypeShape EntityType="fastsport_dbModel.about" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="fastsport_dbModel.account_admin" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="fastsport_dbModel.account_customer" Width="1.5" PointX="3" PointY="26.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="fastsport_dbModel.chi_tiet_hoa_don" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="fastsport_dbModel.color" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="fastsport_dbModel.don_dat_hang" Width="1.5" PointX="0.75" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="fastsport_dbModel.hoa_don" Width="1.5" PointX="0.75" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="fastsport_dbModel.khach_hang" Width="1.5" PointX="0.75" PointY="25.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="fastsport_dbModel.loai_san_pham" Width="1.5" PointX="0.75" PointY="29.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="fastsport_dbModel.nhom_sp" Width="1.5" PointX="1.5" PointY="34" IsExpanded="true" />
+        <EntityTypeShape EntityType="fastsport_dbModel.san_pham" Width="1.5" PointX="6" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="fastsport_dbModel.size" Width="1.5" PointX="3.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="fastsport_dbModel.trang_thai_ddh" Width="1.5" PointX="1.5" PointY="18.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="fastsport_dbModel.trang_thai_sp" Width="1.5" PointX="3.75" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="fastsport_dbModel.chi_tiet_don_dat_hang" Width="1.5" PointX="8.25" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="fastsport_dbModel.database_firewall_rules" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="fastsport_dbModel.FK__account_c__custo__74AE54BC" ManuallyRouted="false" />
+        <AssociationConnector Association="fastsport_dbModel.FK__chi_tiet___color__71D1E811" ManuallyRouted="false" />
+        <AssociationConnector Association="fastsport_dbModel.FK__chi_tiet___custo__6E01572D" ManuallyRouted="false" />
+        <AssociationConnector Association="fastsport_dbModel.FK__chi_tiet___don_d__72C60C4A" ManuallyRouted="false" />
+        <AssociationConnector Association="fastsport_dbModel.FK__chi_tiet___hoa_d__6D0D32F4" ManuallyRouted="false" />
+        <AssociationConnector Association="fastsport_dbModel.FK__chi_tiet___loai___6FE99F9F" ManuallyRouted="false" />
+        <AssociationConnector Association="fastsport_dbModel.FK__chi_tiet___san_p__6EF57B66" ManuallyRouted="false" />
+        <AssociationConnector Association="fastsport_dbModel.FK__chi_tiet___size___70DDC3D8" ManuallyRouted="false" />
+        <AssociationConnector Association="fastsport_dbModel.FK__chi_tiet___color__6754599E" ManuallyRouted="false" />
+        <AssociationConnector Association="fastsport_dbModel.FK_colorID" ManuallyRouted="false" />
+        <AssociationConnector Association="fastsport_dbModel.FK__chi_tiet___don_d__628FA481" ManuallyRouted="false" />
+        <AssociationConnector Association="fastsport_dbModel.FK__hoa_don__don_dh___6A30C649" ManuallyRouted="false" />
+        <AssociationConnector Association="fastsport_dbModel.FK_customer" ManuallyRouted="false" />
+        <AssociationConnector Association="fastsport_dbModel.FK_trang_thai_ddh" ManuallyRouted="false" />
+        <AssociationConnector Association="fastsport_dbModel.FK__hoa_don__custome__693CA210" ManuallyRouted="false" />
+        <AssociationConnector Association="fastsport_dbModel.FK__hoa_don__trang_t__6B24EA82" ManuallyRouted="false" />
+        <AssociationConnector Association="fastsport_dbModel.FK__chi_tiet___custo__6383C8BA" ManuallyRouted="false" />
+        <AssociationConnector Association="fastsport_dbModel.FK__chi_tiet___loai___656C112C" ManuallyRouted="false" />
+        <AssociationConnector Association="fastsport_dbModel.FK__loai_san___nhom___05D8E0BE" ManuallyRouted="false" />
+        <AssociationConnector Association="fastsport_dbModel.FK_loai_sp" ManuallyRouted="false" />
+        <AssociationConnector Association="fastsport_dbModel.FK__san_pham__nhom_s__04E4BC85" ManuallyRouted="false" />
+        <AssociationConnector Association="fastsport_dbModel.FK__chi_tiet___san_p__6477ECF3" ManuallyRouted="false" />
+        <AssociationConnector Association="fastsport_dbModel.FK_size" ManuallyRouted="false" />
+        <AssociationConnector Association="fastsport_dbModel.FK_trang_thai" ManuallyRouted="false" />
+        <AssociationConnector Association="fastsport_dbModel.FK__chi_tiet___size___66603565" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
