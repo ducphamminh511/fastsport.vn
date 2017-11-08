@@ -323,15 +323,15 @@
     <Content Include="js\Routes\ProductDetailRoutes.js" />
     <Content Include="js\Template\Home.html" />
     <Content Include="js\Template\ProductDetail.html" />
-    <Content Include="Models\Fastsportvn_Model.Context.tt">
+    <Content Include="Models\fastsportvn_model_azure.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Fastsportvn_Model.Context.cs</LastGenOutput>
-      <DependentUpon>Fastsportvn_Model.edmx</DependentUpon>
+      <DependentUpon>fastsportvn_model_azure.edmx</DependentUpon>
+      <LastGenOutput>fastsportvn_model_azure.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\Fastsportvn_Model.tt">
+    <Content Include="Models\fastsportvn_model_azure.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Fastsportvn_Model.edmx</DependentUpon>
-      <LastGenOutput>Fastsportvn_Model.cs</LastGenOutput>
+      <DependentUpon>fastsportvn_model_azure.edmx</DependentUpon>
+      <LastGenOutput>fastsportvn_model_azure.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
@@ -1120,73 +1120,67 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\about.cs">
-      <DependentUpon>Fastsportvn_Model.tt</DependentUpon>
+      <DependentUpon>fastsportvn_model_azure.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\account_admin.cs">
-      <DependentUpon>Fastsportvn_Model.tt</DependentUpon>
+      <DependentUpon>fastsportvn_model_azure.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\account_customer.cs">
-      <DependentUpon>Fastsportvn_Model.tt</DependentUpon>
+      <DependentUpon>fastsportvn_model_azure.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\chi_tiet_don_dat_hang.cs">
-      <DependentUpon>Fastsportvn_Model.tt</DependentUpon>
+      <DependentUpon>fastsportvn_model_azure.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\chi_tiet_hoa_don.cs">
-      <DependentUpon>Fastsportvn_Model.tt</DependentUpon>
+      <DependentUpon>fastsportvn_model_azure.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\color.cs">
-      <DependentUpon>Fastsportvn_Model.tt</DependentUpon>
+      <DependentUpon>fastsportvn_model_azure.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\database_firewall_rules.cs">
+      <DependentUpon>fastsportvn_model_azure.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\don_dat_hang.cs">
-      <DependentUpon>Fastsportvn_Model.tt</DependentUpon>
+      <DependentUpon>fastsportvn_model_azure.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Fastsportvn_Model.Context.cs">
+    <Compile Include="Models\fastsportvn_model_azure.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Fastsportvn_Model.Context.tt</DependentUpon>
+      <DependentUpon>fastsportvn_model_azure.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Fastsportvn_Model.cs">
+    <Compile Include="Models\fastsportvn_model_azure.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Fastsportvn_Model.tt</DependentUpon>
+      <DependentUpon>fastsportvn_model_azure.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Fastsportvn_Model.Designer.cs">
+    <Compile Include="Models\fastsportvn_model_azure.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Fastsportvn_Model.edmx</DependentUpon>
+      <DependentUpon>fastsportvn_model_azure.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\hoa_don.cs">
-      <DependentUpon>Fastsportvn_Model.tt</DependentUpon>
+      <DependentUpon>fastsportvn_model_azure.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\khach_hang.cs">
-      <DependentUpon>Fastsportvn_Model.tt</DependentUpon>
+      <DependentUpon>fastsportvn_model_azure.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\loai_san_pham.cs">
-      <DependentUpon>Fastsportvn_Model.tt</DependentUpon>
+      <DependentUpon>fastsportvn_model_azure.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\nhom_sp.cs">
-      <DependentUpon>Fastsportvn_Model.tt</DependentUpon>
+      <DependentUpon>fastsportvn_model_azure.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\san_pham.cs">
-      <DependentUpon>Fastsportvn_Model.tt</DependentUpon>
+      <DependentUpon>fastsportvn_model_azure.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\size.cs">
-      <DependentUpon>Fastsportvn_Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>Fastsportvn_Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sp_helpdiagrams_Result.cs">
-      <DependentUpon>Fastsportvn_Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>Fastsportvn_Model.tt</DependentUpon>
+      <DependentUpon>fastsportvn_model_azure.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\trang_thai_ddh.cs">
-      <DependentUpon>Fastsportvn_Model.tt</DependentUpon>
+      <DependentUpon>fastsportvn_model_azure.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\trang_thai_sp.cs">
-      <DependentUpon>Fastsportvn_Model.tt</DependentUpon>
+      <DependentUpon>fastsportvn_model_azure.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ViewModels\API_Results.cs" />
     <Compile Include="Models\ViewModels\sanphamvm.cs" />
@@ -1203,12 +1197,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <EntityDeploy Include="Models\Fastsportvn_Model.edmx">
+    <EntityDeploy Include="Models\fastsportvn_model_azure.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Fastsportvn_Model.Designer.cs</LastGenOutput>
+      <LastGenOutput>fastsportvn_model_azure.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\Fastsportvn_Model.edmx.diagram">
-      <DependentUpon>Fastsportvn_Model.edmx</DependentUpon>
+    <Content Include="Models\fastsportvn_model_azure.edmx.diagram">
+      <DependentUpon>fastsportvn_model_azure.edmx</DependentUpon>
     </Content>
     <None Include="packages.config" />
     <Content Include="Scripts\version.json" />

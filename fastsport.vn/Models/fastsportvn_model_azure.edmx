@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="FastSportModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="fastsport_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="about">
           <Key>
             <PropertyRef Name="ID" />
@@ -37,7 +37,7 @@
           <Property Name="customer_id" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'fastsport_db.dbo.chi_tiet_don_dat_hang' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="chi_tiet_don_dat_hang">
           <Key>
             <PropertyRef Name="ID" />
@@ -160,16 +160,6 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
           <Property Name="Code" Type="char" MaxLength="20" />
           <Property Name="Size" Type="char" MaxLength="10" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
-        </EntityType>
         <EntityType Name="trang_thai_ddh">
           <Key>
             <PropertyRef Name="ID" />
@@ -186,7 +176,25 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
           <Property Name="Code" Type="char" MaxLength="10" />
           <Property Name="Name" Type="nvarchar" MaxLength="20" />
         </EntityType>
-        <Association Name="FK__account_c__custo__3F466844">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'fastsport_db.sys.database_firewall_rules' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="database_firewall_rules">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="start_ip_address" />
+            <PropertyRef Name="end_ip_address" />
+            <PropertyRef Name="create_date" />
+            <PropertyRef Name="modify_date" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="start_ip_address" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="end_ip_address" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="create_date" Type="datetime" Nullable="false" />
+          <Property Name="modify_date" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__account_c__custo__74AE54BC">
           <End Role="khach_hang" Type="Self.khach_hang" Multiplicity="0..1" />
           <End Role="account_customer" Type="Self.account_customer" Multiplicity="*" />
           <ReferentialConstraint>
@@ -198,7 +206,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__chi_tiet___color__30F848ED">
+        <Association Name="FK__chi_tiet___color__6754599E">
           <End Role="color" Type="Self.color" Multiplicity="0..1" />
           <End Role="chi_tiet_don_dat_hang" Type="Self.chi_tiet_don_dat_hang" Multiplicity="*" />
           <ReferentialConstraint>
@@ -210,7 +218,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__chi_tiet___color__3C69FB99">
+        <Association Name="FK__chi_tiet___color__71D1E811">
           <End Role="color" Type="Self.color" Multiplicity="0..1" />
           <End Role="chi_tiet_hoa_don" Type="Self.chi_tiet_hoa_don" Multiplicity="*" />
           <ReferentialConstraint>
@@ -222,7 +230,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__chi_tiet___custo__2D27B809">
+        <Association Name="FK__chi_tiet___custo__6383C8BA">
           <End Role="khach_hang" Type="Self.khach_hang" Multiplicity="0..1" />
           <End Role="chi_tiet_don_dat_hang" Type="Self.chi_tiet_don_dat_hang" Multiplicity="*" />
           <ReferentialConstraint>
@@ -234,7 +242,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__chi_tiet___custo__38996AB5">
+        <Association Name="FK__chi_tiet___custo__6E01572D">
           <End Role="khach_hang" Type="Self.khach_hang" Multiplicity="0..1" />
           <End Role="chi_tiet_hoa_don" Type="Self.chi_tiet_hoa_don" Multiplicity="*" />
           <ReferentialConstraint>
@@ -246,7 +254,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__chi_tiet___don_d__2C3393D0">
+        <Association Name="FK__chi_tiet___don_d__628FA481">
           <End Role="don_dat_hang" Type="Self.don_dat_hang" Multiplicity="0..1" />
           <End Role="chi_tiet_don_dat_hang" Type="Self.chi_tiet_don_dat_hang" Multiplicity="*" />
           <ReferentialConstraint>
@@ -258,7 +266,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__chi_tiet___don_d__3D5E1FD2">
+        <Association Name="FK__chi_tiet___don_d__72C60C4A">
           <End Role="don_dat_hang" Type="Self.don_dat_hang" Multiplicity="0..1" />
           <End Role="chi_tiet_hoa_don" Type="Self.chi_tiet_hoa_don" Multiplicity="*" />
           <ReferentialConstraint>
@@ -270,7 +278,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__chi_tiet___hoa_d__37A5467C">
+        <Association Name="FK__chi_tiet___hoa_d__6D0D32F4">
           <End Role="hoa_don" Type="Self.hoa_don" Multiplicity="0..1" />
           <End Role="chi_tiet_hoa_don" Type="Self.chi_tiet_hoa_don" Multiplicity="*" />
           <ReferentialConstraint>
@@ -282,7 +290,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__chi_tiet___loai___2F10007B">
+        <Association Name="FK__chi_tiet___loai___656C112C">
           <End Role="loai_san_pham" Type="Self.loai_san_pham" Multiplicity="0..1" />
           <End Role="chi_tiet_don_dat_hang" Type="Self.chi_tiet_don_dat_hang" Multiplicity="*" />
           <ReferentialConstraint>
@@ -294,7 +302,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__chi_tiet___loai___3A81B327">
+        <Association Name="FK__chi_tiet___loai___6FE99F9F">
           <End Role="loai_san_pham" Type="Self.loai_san_pham" Multiplicity="0..1" />
           <End Role="chi_tiet_hoa_don" Type="Self.chi_tiet_hoa_don" Multiplicity="*" />
           <ReferentialConstraint>
@@ -306,7 +314,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__chi_tiet___san_p__2E1BDC42">
+        <Association Name="FK__chi_tiet___san_p__6477ECF3">
           <End Role="san_pham" Type="Self.san_pham" Multiplicity="0..1" />
           <End Role="chi_tiet_don_dat_hang" Type="Self.chi_tiet_don_dat_hang" Multiplicity="*" />
           <ReferentialConstraint>
@@ -318,7 +326,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__chi_tiet___san_p__398D8EEE">
+        <Association Name="FK__chi_tiet___san_p__6EF57B66">
           <End Role="san_pham" Type="Self.san_pham" Multiplicity="0..1" />
           <End Role="chi_tiet_hoa_don" Type="Self.chi_tiet_hoa_don" Multiplicity="*" />
           <ReferentialConstraint>
@@ -330,7 +338,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__chi_tiet___size___300424B4">
+        <Association Name="FK__chi_tiet___size___66603565">
           <End Role="size" Type="Self.size" Multiplicity="0..1" />
           <End Role="chi_tiet_don_dat_hang" Type="Self.chi_tiet_don_dat_hang" Multiplicity="*" />
           <ReferentialConstraint>
@@ -342,7 +350,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__chi_tiet___size___3B75D760">
+        <Association Name="FK__chi_tiet___size___70DDC3D8">
           <End Role="size" Type="Self.size" Multiplicity="0..1" />
           <End Role="chi_tiet_hoa_don" Type="Self.chi_tiet_hoa_don" Multiplicity="*" />
           <ReferentialConstraint>
@@ -354,7 +362,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__hoa_don__custome__32E0915F">
+        <Association Name="FK__hoa_don__custome__693CA210">
           <End Role="khach_hang" Type="Self.khach_hang" Multiplicity="0..1" />
           <End Role="hoa_don" Type="Self.hoa_don" Multiplicity="*" />
           <ReferentialConstraint>
@@ -366,19 +374,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__hoa_don__custome__33D4B598">
-          <End Role="khach_hang" Type="Self.khach_hang" Multiplicity="0..1" />
-          <End Role="hoa_don" Type="Self.hoa_don" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="khach_hang">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="hoa_don">
-              <PropertyRef Name="customer_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__hoa_don__don_dh___34C8D9D1">
+        <Association Name="FK__hoa_don__don_dh___6A30C649">
           <End Role="don_dat_hang" Type="Self.don_dat_hang" Multiplicity="0..1" />
           <End Role="hoa_don" Type="Self.hoa_don" Multiplicity="*" />
           <ReferentialConstraint>
@@ -390,7 +386,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__hoa_don__trang_t__35BCFE0A">
+        <Association Name="FK__hoa_don__trang_t__6B24EA82">
           <End Role="trang_thai_ddh" Type="Self.trang_thai_ddh" Multiplicity="0..1" />
           <End Role="hoa_don" Type="Self.hoa_don" Multiplicity="*" />
           <ReferentialConstraint>
@@ -402,7 +398,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__loai_san___nhom___5DCAEF64">
+        <Association Name="FK__loai_san___nhom___05D8E0BE">
           <End Role="nhom_sp" Type="Self.nhom_sp" Multiplicity="0..1" />
           <End Role="loai_san_pham" Type="Self.loai_san_pham" Multiplicity="*" />
           <ReferentialConstraint>
@@ -410,6 +406,18 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
               <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="loai_san_pham">
+              <PropertyRef Name="nhom_sp_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__san_pham__nhom_s__04E4BC85">
+          <End Role="nhom_sp" Type="Self.nhom_sp" Multiplicity="0..1" />
+          <End Role="san_pham" Type="Self.san_pham" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="nhom_sp">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="san_pham">
               <PropertyRef Name="nhom_sp_id" />
             </Dependent>
           </ReferentialConstraint>
@@ -450,18 +458,6 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="fk_nhom_sp">
-          <End Role="nhom_sp" Type="Self.nhom_sp" Multiplicity="0..1" />
-          <End Role="san_pham" Type="Self.san_pham" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="nhom_sp">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="san_pham">
-              <PropertyRef Name="nhom_sp_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_size">
           <End Role="size" Type="Self.size" Multiplicity="0..1" />
           <End Role="san_pham" Type="Self.san_pham" Multiplicity="*" />
@@ -498,38 +494,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
-        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <EntityContainer Name="FastSportModelStoreContainer">
+        <EntityContainer Name="fastsport_dbModelStoreContainer">
           <EntitySet Name="about" EntityType="Self.about" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="account_admin" EntityType="Self.account_admin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="account_customer" EntityType="Self.account_customer" Schema="dbo" store:Type="Tables" />
@@ -542,7 +507,6 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
           <EntitySet Name="nhom_sp" EntityType="Self.nhom_sp" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="san_pham" EntityType="Self.san_pham" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="size" EntityType="Self.size" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="trang_thai_ddh" EntityType="Self.trang_thai_ddh" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="trang_thai_sp" EntityType="Self.trang_thai_sp" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="chi_tiet_don_dat_hang" EntityType="Self.chi_tiet_don_dat_hang" store:Type="Tables" store:Schema="dbo">
@@ -559,81 +523,91 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
     [chi_tiet_don_dat_hang].[color_id] AS [color_id]
     FROM [dbo].[chi_tiet_don_dat_hang] AS [chi_tiet_don_dat_hang]</DefiningQuery>
           </EntitySet>
-          <AssociationSet Name="FK__account_c__custo__3F466844" Association="Self.FK__account_c__custo__3F466844">
+          <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" store:Type="Views" store:Schema="sys">
+            <DefiningQuery>SELECT 
+    [database_firewall_rules].[id] AS [id], 
+    [database_firewall_rules].[name] AS [name], 
+    [database_firewall_rules].[start_ip_address] AS [start_ip_address], 
+    [database_firewall_rules].[end_ip_address] AS [end_ip_address], 
+    [database_firewall_rules].[create_date] AS [create_date], 
+    [database_firewall_rules].[modify_date] AS [modify_date]
+    FROM [sys].[database_firewall_rules] AS [database_firewall_rules]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__account_c__custo__74AE54BC" Association="Self.FK__account_c__custo__74AE54BC">
             <End Role="khach_hang" EntitySet="khach_hang" />
             <End Role="account_customer" EntitySet="account_customer" />
           </AssociationSet>
-          <AssociationSet Name="FK__chi_tiet___color__30F848ED" Association="Self.FK__chi_tiet___color__30F848ED">
+          <AssociationSet Name="FK__chi_tiet___color__6754599E" Association="Self.FK__chi_tiet___color__6754599E">
             <End Role="color" EntitySet="color" />
             <End Role="chi_tiet_don_dat_hang" EntitySet="chi_tiet_don_dat_hang" />
           </AssociationSet>
-          <AssociationSet Name="FK__chi_tiet___color__3C69FB99" Association="Self.FK__chi_tiet___color__3C69FB99">
+          <AssociationSet Name="FK__chi_tiet___color__71D1E811" Association="Self.FK__chi_tiet___color__71D1E811">
             <End Role="color" EntitySet="color" />
             <End Role="chi_tiet_hoa_don" EntitySet="chi_tiet_hoa_don" />
           </AssociationSet>
-          <AssociationSet Name="FK__chi_tiet___custo__2D27B809" Association="Self.FK__chi_tiet___custo__2D27B809">
+          <AssociationSet Name="FK__chi_tiet___custo__6383C8BA" Association="Self.FK__chi_tiet___custo__6383C8BA">
             <End Role="khach_hang" EntitySet="khach_hang" />
             <End Role="chi_tiet_don_dat_hang" EntitySet="chi_tiet_don_dat_hang" />
           </AssociationSet>
-          <AssociationSet Name="FK__chi_tiet___custo__38996AB5" Association="Self.FK__chi_tiet___custo__38996AB5">
+          <AssociationSet Name="FK__chi_tiet___custo__6E01572D" Association="Self.FK__chi_tiet___custo__6E01572D">
             <End Role="khach_hang" EntitySet="khach_hang" />
             <End Role="chi_tiet_hoa_don" EntitySet="chi_tiet_hoa_don" />
           </AssociationSet>
-          <AssociationSet Name="FK__chi_tiet___don_d__2C3393D0" Association="Self.FK__chi_tiet___don_d__2C3393D0">
+          <AssociationSet Name="FK__chi_tiet___don_d__628FA481" Association="Self.FK__chi_tiet___don_d__628FA481">
             <End Role="don_dat_hang" EntitySet="don_dat_hang" />
             <End Role="chi_tiet_don_dat_hang" EntitySet="chi_tiet_don_dat_hang" />
           </AssociationSet>
-          <AssociationSet Name="FK__chi_tiet___don_d__3D5E1FD2" Association="Self.FK__chi_tiet___don_d__3D5E1FD2">
+          <AssociationSet Name="FK__chi_tiet___don_d__72C60C4A" Association="Self.FK__chi_tiet___don_d__72C60C4A">
             <End Role="don_dat_hang" EntitySet="don_dat_hang" />
             <End Role="chi_tiet_hoa_don" EntitySet="chi_tiet_hoa_don" />
           </AssociationSet>
-          <AssociationSet Name="FK__chi_tiet___hoa_d__37A5467C" Association="Self.FK__chi_tiet___hoa_d__37A5467C">
+          <AssociationSet Name="FK__chi_tiet___hoa_d__6D0D32F4" Association="Self.FK__chi_tiet___hoa_d__6D0D32F4">
             <End Role="hoa_don" EntitySet="hoa_don" />
             <End Role="chi_tiet_hoa_don" EntitySet="chi_tiet_hoa_don" />
           </AssociationSet>
-          <AssociationSet Name="FK__chi_tiet___loai___2F10007B" Association="Self.FK__chi_tiet___loai___2F10007B">
+          <AssociationSet Name="FK__chi_tiet___loai___656C112C" Association="Self.FK__chi_tiet___loai___656C112C">
             <End Role="loai_san_pham" EntitySet="loai_san_pham" />
             <End Role="chi_tiet_don_dat_hang" EntitySet="chi_tiet_don_dat_hang" />
           </AssociationSet>
-          <AssociationSet Name="FK__chi_tiet___loai___3A81B327" Association="Self.FK__chi_tiet___loai___3A81B327">
+          <AssociationSet Name="FK__chi_tiet___loai___6FE99F9F" Association="Self.FK__chi_tiet___loai___6FE99F9F">
             <End Role="loai_san_pham" EntitySet="loai_san_pham" />
             <End Role="chi_tiet_hoa_don" EntitySet="chi_tiet_hoa_don" />
           </AssociationSet>
-          <AssociationSet Name="FK__chi_tiet___san_p__2E1BDC42" Association="Self.FK__chi_tiet___san_p__2E1BDC42">
+          <AssociationSet Name="FK__chi_tiet___san_p__6477ECF3" Association="Self.FK__chi_tiet___san_p__6477ECF3">
             <End Role="san_pham" EntitySet="san_pham" />
             <End Role="chi_tiet_don_dat_hang" EntitySet="chi_tiet_don_dat_hang" />
           </AssociationSet>
-          <AssociationSet Name="FK__chi_tiet___san_p__398D8EEE" Association="Self.FK__chi_tiet___san_p__398D8EEE">
+          <AssociationSet Name="FK__chi_tiet___san_p__6EF57B66" Association="Self.FK__chi_tiet___san_p__6EF57B66">
             <End Role="san_pham" EntitySet="san_pham" />
             <End Role="chi_tiet_hoa_don" EntitySet="chi_tiet_hoa_don" />
           </AssociationSet>
-          <AssociationSet Name="FK__chi_tiet___size___300424B4" Association="Self.FK__chi_tiet___size___300424B4">
+          <AssociationSet Name="FK__chi_tiet___size___66603565" Association="Self.FK__chi_tiet___size___66603565">
             <End Role="size" EntitySet="size" />
             <End Role="chi_tiet_don_dat_hang" EntitySet="chi_tiet_don_dat_hang" />
           </AssociationSet>
-          <AssociationSet Name="FK__chi_tiet___size___3B75D760" Association="Self.FK__chi_tiet___size___3B75D760">
+          <AssociationSet Name="FK__chi_tiet___size___70DDC3D8" Association="Self.FK__chi_tiet___size___70DDC3D8">
             <End Role="size" EntitySet="size" />
             <End Role="chi_tiet_hoa_don" EntitySet="chi_tiet_hoa_don" />
           </AssociationSet>
-          <AssociationSet Name="FK__hoa_don__custome__32E0915F" Association="Self.FK__hoa_don__custome__32E0915F">
+          <AssociationSet Name="FK__hoa_don__custome__693CA210" Association="Self.FK__hoa_don__custome__693CA210">
             <End Role="khach_hang" EntitySet="khach_hang" />
             <End Role="hoa_don" EntitySet="hoa_don" />
           </AssociationSet>
-          <AssociationSet Name="FK__hoa_don__custome__33D4B598" Association="Self.FK__hoa_don__custome__33D4B598">
-            <End Role="khach_hang" EntitySet="khach_hang" />
-            <End Role="hoa_don" EntitySet="hoa_don" />
-          </AssociationSet>
-          <AssociationSet Name="FK__hoa_don__don_dh___34C8D9D1" Association="Self.FK__hoa_don__don_dh___34C8D9D1">
+          <AssociationSet Name="FK__hoa_don__don_dh___6A30C649" Association="Self.FK__hoa_don__don_dh___6A30C649">
             <End Role="don_dat_hang" EntitySet="don_dat_hang" />
             <End Role="hoa_don" EntitySet="hoa_don" />
           </AssociationSet>
-          <AssociationSet Name="FK__hoa_don__trang_t__35BCFE0A" Association="Self.FK__hoa_don__trang_t__35BCFE0A">
+          <AssociationSet Name="FK__hoa_don__trang_t__6B24EA82" Association="Self.FK__hoa_don__trang_t__6B24EA82">
             <End Role="trang_thai_ddh" EntitySet="trang_thai_ddh" />
             <End Role="hoa_don" EntitySet="hoa_don" />
           </AssociationSet>
-          <AssociationSet Name="FK__loai_san___nhom___5DCAEF64" Association="Self.FK__loai_san___nhom___5DCAEF64">
+          <AssociationSet Name="FK__loai_san___nhom___05D8E0BE" Association="Self.FK__loai_san___nhom___05D8E0BE">
             <End Role="nhom_sp" EntitySet="nhom_sp" />
             <End Role="loai_san_pham" EntitySet="loai_san_pham" />
+          </AssociationSet>
+          <AssociationSet Name="FK__san_pham__nhom_s__04E4BC85" Association="Self.FK__san_pham__nhom_s__04E4BC85">
+            <End Role="nhom_sp" EntitySet="nhom_sp" />
+            <End Role="san_pham" EntitySet="san_pham" />
           </AssociationSet>
           <AssociationSet Name="FK_colorID" Association="Self.FK_colorID">
             <End Role="color" EntitySet="color" />
@@ -645,10 +619,6 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
           </AssociationSet>
           <AssociationSet Name="FK_loai_sp" Association="Self.FK_loai_sp">
             <End Role="loai_san_pham" EntitySet="loai_san_pham" />
-            <End Role="san_pham" EntitySet="san_pham" />
-          </AssociationSet>
-          <AssociationSet Name="fk_nhom_sp" Association="Self.fk_nhom_sp">
-            <End Role="nhom_sp" EntitySet="nhom_sp" />
             <End Role="san_pham" EntitySet="san_pham" />
           </AssociationSet>
           <AssociationSet Name="FK_size" Association="Self.FK_size">
@@ -668,7 +638,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="FastSportModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="fastsport_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="about">
           <Key>
             <PropertyRef Name="ID" />
@@ -699,7 +669,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
           <Property Name="login_id" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
           <Property Name="passwords" Type="String" MaxLength="64" FixedLength="true" Unicode="false" />
           <Property Name="customer_id" Type="Int32" />
-          <NavigationProperty Name="khach_hang" Relationship="Self.FK__account_c__custo__3F466844" FromRole="account_customer" ToRole="khach_hang" />
+          <NavigationProperty Name="khach_hang" Relationship="Self.FK__account_c__custo__74AE54BC" FromRole="account_customer" ToRole="khach_hang" />
         </EntityType>
         <EntityType Name="chi_tiet_hoa_don">
           <Key>
@@ -714,13 +684,13 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
           <Property Name="color_id" Type="Int32" />
           <Property Name="don_dh_id" Type="Int32" />
           <Property Name="customer_id" Type="Int32" />
-          <NavigationProperty Name="color" Relationship="Self.FK__chi_tiet___color__3C69FB99" FromRole="chi_tiet_hoa_don" ToRole="color" />
-          <NavigationProperty Name="khach_hang" Relationship="Self.FK__chi_tiet___custo__38996AB5" FromRole="chi_tiet_hoa_don" ToRole="khach_hang" />
-          <NavigationProperty Name="don_dat_hang" Relationship="Self.FK__chi_tiet___don_d__3D5E1FD2" FromRole="chi_tiet_hoa_don" ToRole="don_dat_hang" />
-          <NavigationProperty Name="hoa_don" Relationship="Self.FK__chi_tiet___hoa_d__37A5467C" FromRole="chi_tiet_hoa_don" ToRole="hoa_don" />
-          <NavigationProperty Name="loai_san_pham" Relationship="Self.FK__chi_tiet___loai___3A81B327" FromRole="chi_tiet_hoa_don" ToRole="loai_san_pham" />
-          <NavigationProperty Name="san_pham" Relationship="Self.FK__chi_tiet___san_p__398D8EEE" FromRole="chi_tiet_hoa_don" ToRole="san_pham" />
-          <NavigationProperty Name="size" Relationship="Self.FK__chi_tiet___size___3B75D760" FromRole="chi_tiet_hoa_don" ToRole="size" />
+          <NavigationProperty Name="color" Relationship="Self.FK__chi_tiet___color__71D1E811" FromRole="chi_tiet_hoa_don" ToRole="color" />
+          <NavigationProperty Name="khach_hang" Relationship="Self.FK__chi_tiet___custo__6E01572D" FromRole="chi_tiet_hoa_don" ToRole="khach_hang" />
+          <NavigationProperty Name="don_dat_hang" Relationship="Self.FK__chi_tiet___don_d__72C60C4A" FromRole="chi_tiet_hoa_don" ToRole="don_dat_hang" />
+          <NavigationProperty Name="hoa_don" Relationship="Self.FK__chi_tiet___hoa_d__6D0D32F4" FromRole="chi_tiet_hoa_don" ToRole="hoa_don" />
+          <NavigationProperty Name="loai_san_pham" Relationship="Self.FK__chi_tiet___loai___6FE99F9F" FromRole="chi_tiet_hoa_don" ToRole="loai_san_pham" />
+          <NavigationProperty Name="san_pham" Relationship="Self.FK__chi_tiet___san_p__6EF57B66" FromRole="chi_tiet_hoa_don" ToRole="san_pham" />
+          <NavigationProperty Name="size" Relationship="Self.FK__chi_tiet___size___70DDC3D8" FromRole="chi_tiet_hoa_don" ToRole="size" />
         </EntityType>
         <EntityType Name="color">
           <Key>
@@ -729,8 +699,8 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Code" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
           <Property Name="Color1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="chi_tiet_hoa_don" Relationship="Self.FK__chi_tiet___color__3C69FB99" FromRole="color" ToRole="chi_tiet_hoa_don" />
-          <NavigationProperty Name="chi_tiet_don_dat_hang" Relationship="Self.FK__chi_tiet___color__30F848ED" FromRole="color" ToRole="chi_tiet_don_dat_hang" />
+          <NavigationProperty Name="chi_tiet_hoa_don" Relationship="Self.FK__chi_tiet___color__71D1E811" FromRole="color" ToRole="chi_tiet_hoa_don" />
+          <NavigationProperty Name="chi_tiet_don_dat_hang" Relationship="Self.FK__chi_tiet___color__6754599E" FromRole="color" ToRole="chi_tiet_don_dat_hang" />
           <NavigationProperty Name="san_pham" Relationship="Self.FK_colorID" FromRole="color" ToRole="san_pham" />
         </EntityType>
         <EntityType Name="don_dat_hang">
@@ -745,9 +715,9 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
           <Property Name="ngay_lap_dh" Type="DateTime" Precision="3" />
           <Property Name="customer_id" Type="Int32" />
           <Property Name="trang_thai_don_dh_id" Type="Int32" />
-          <NavigationProperty Name="chi_tiet_hoa_don" Relationship="Self.FK__chi_tiet___don_d__3D5E1FD2" FromRole="don_dat_hang" ToRole="chi_tiet_hoa_don" />
-          <NavigationProperty Name="chi_tiet_don_dat_hang" Relationship="Self.FK__chi_tiet___don_d__2C3393D0" FromRole="don_dat_hang" ToRole="chi_tiet_don_dat_hang" />
-          <NavigationProperty Name="hoa_don" Relationship="Self.FK__hoa_don__don_dh___34C8D9D1" FromRole="don_dat_hang" ToRole="hoa_don" />
+          <NavigationProperty Name="chi_tiet_hoa_don" Relationship="Self.FK__chi_tiet___don_d__72C60C4A" FromRole="don_dat_hang" ToRole="chi_tiet_hoa_don" />
+          <NavigationProperty Name="chi_tiet_don_dat_hang" Relationship="Self.FK__chi_tiet___don_d__628FA481" FromRole="don_dat_hang" ToRole="chi_tiet_don_dat_hang" />
+          <NavigationProperty Name="hoa_don" Relationship="Self.FK__hoa_don__don_dh___6A30C649" FromRole="don_dat_hang" ToRole="hoa_don" />
           <NavigationProperty Name="khach_hang" Relationship="Self.FK_customer" FromRole="don_dat_hang" ToRole="khach_hang" />
           <NavigationProperty Name="trang_thai_ddh" Relationship="Self.FK_trang_thai_ddh" FromRole="don_dat_hang" ToRole="trang_thai_ddh" />
         </EntityType>
@@ -760,11 +730,10 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
           <Property Name="don_dh_id" Type="Int32" />
           <Property Name="customer_id" Type="Int32" />
           <Property Name="trang_thang_don_dh_id" Type="Int32" />
-          <NavigationProperty Name="chi_tiet_hoa_don" Relationship="Self.FK__chi_tiet___hoa_d__37A5467C" FromRole="hoa_don" ToRole="chi_tiet_hoa_don" />
-          <NavigationProperty Name="don_dat_hang" Relationship="Self.FK__hoa_don__don_dh___34C8D9D1" FromRole="hoa_don" ToRole="don_dat_hang" />
-          <NavigationProperty Name="khach_hang" Relationship="Self.FK__hoa_don__custome__32E0915F" FromRole="hoa_don" ToRole="khach_hang" />
-          <NavigationProperty Name="khach_hang1" Relationship="Self.FK__hoa_don__custome__33D4B598" FromRole="hoa_don" ToRole="khach_hang" />
-          <NavigationProperty Name="trang_thai_ddh" Relationship="Self.FK__hoa_don__trang_t__35BCFE0A" FromRole="hoa_don" ToRole="trang_thai_ddh" />
+          <NavigationProperty Name="chi_tiet_hoa_don" Relationship="Self.FK__chi_tiet___hoa_d__6D0D32F4" FromRole="hoa_don" ToRole="chi_tiet_hoa_don" />
+          <NavigationProperty Name="don_dat_hang" Relationship="Self.FK__hoa_don__don_dh___6A30C649" FromRole="hoa_don" ToRole="don_dat_hang" />
+          <NavigationProperty Name="khach_hang" Relationship="Self.FK__hoa_don__custome__693CA210" FromRole="hoa_don" ToRole="khach_hang" />
+          <NavigationProperty Name="trang_thai_ddh" Relationship="Self.FK__hoa_don__trang_t__6B24EA82" FromRole="hoa_don" ToRole="trang_thai_ddh" />
         </EntityType>
         <EntityType Name="khach_hang">
           <Key>
@@ -777,12 +746,11 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
           <Property Name="Dien_thoai" Type="String" MaxLength="13" FixedLength="true" Unicode="false" />
           <Property Name="email" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
           <Property Name="ngay_sinh" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="account_customer" Relationship="Self.FK__account_c__custo__3F466844" FromRole="khach_hang" ToRole="account_customer" />
-          <NavigationProperty Name="chi_tiet_hoa_don" Relationship="Self.FK__chi_tiet___custo__38996AB5" FromRole="khach_hang" ToRole="chi_tiet_hoa_don" />
+          <NavigationProperty Name="account_customer" Relationship="Self.FK__account_c__custo__74AE54BC" FromRole="khach_hang" ToRole="account_customer" />
+          <NavigationProperty Name="chi_tiet_hoa_don" Relationship="Self.FK__chi_tiet___custo__6E01572D" FromRole="khach_hang" ToRole="chi_tiet_hoa_don" />
           <NavigationProperty Name="don_dat_hang" Relationship="Self.FK_customer" FromRole="khach_hang" ToRole="don_dat_hang" />
-          <NavigationProperty Name="hoa_don" Relationship="Self.FK__hoa_don__custome__32E0915F" FromRole="khach_hang" ToRole="hoa_don" />
-          <NavigationProperty Name="hoa_don1" Relationship="Self.FK__hoa_don__custome__33D4B598" FromRole="khach_hang" ToRole="hoa_don" />
-          <NavigationProperty Name="chi_tiet_don_dat_hang" Relationship="Self.FK__chi_tiet___custo__2D27B809" FromRole="khach_hang" ToRole="chi_tiet_don_dat_hang" />
+          <NavigationProperty Name="hoa_don" Relationship="Self.FK__hoa_don__custome__693CA210" FromRole="khach_hang" ToRole="hoa_don" />
+          <NavigationProperty Name="chi_tiet_don_dat_hang" Relationship="Self.FK__chi_tiet___custo__6383C8BA" FromRole="khach_hang" ToRole="chi_tiet_don_dat_hang" />
         </EntityType>
         <EntityType Name="loai_san_pham">
           <Key>
@@ -792,9 +760,9 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
           <Property Name="Code" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="nhom_sp_id" Type="Int32" />
-          <NavigationProperty Name="chi_tiet_hoa_don" Relationship="Self.FK__chi_tiet___loai___3A81B327" FromRole="loai_san_pham" ToRole="chi_tiet_hoa_don" />
-          <NavigationProperty Name="chi_tiet_don_dat_hang" Relationship="Self.FK__chi_tiet___loai___2F10007B" FromRole="loai_san_pham" ToRole="chi_tiet_don_dat_hang" />
-          <NavigationProperty Name="nhom_sp" Relationship="Self.FK__loai_san___nhom___5DCAEF64" FromRole="loai_san_pham" ToRole="nhom_sp" />
+          <NavigationProperty Name="chi_tiet_hoa_don" Relationship="Self.FK__chi_tiet___loai___6FE99F9F" FromRole="loai_san_pham" ToRole="chi_tiet_hoa_don" />
+          <NavigationProperty Name="chi_tiet_don_dat_hang" Relationship="Self.FK__chi_tiet___loai___656C112C" FromRole="loai_san_pham" ToRole="chi_tiet_don_dat_hang" />
+          <NavigationProperty Name="nhom_sp" Relationship="Self.FK__loai_san___nhom___05D8E0BE" FromRole="loai_san_pham" ToRole="nhom_sp" />
           <NavigationProperty Name="san_pham" Relationship="Self.FK_loai_sp" FromRole="loai_san_pham" ToRole="san_pham" />
         </EntityType>
         <EntityType Name="nhom_sp">
@@ -804,8 +772,8 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Code" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
           <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="loai_san_pham" Relationship="Self.FK__loai_san___nhom___5DCAEF64" FromRole="nhom_sp" ToRole="loai_san_pham" />
-          <NavigationProperty Name="san_pham" Relationship="Self.fk_nhom_sp" FromRole="nhom_sp" ToRole="san_pham" />
+          <NavigationProperty Name="loai_san_pham" Relationship="Self.FK__loai_san___nhom___05D8E0BE" FromRole="nhom_sp" ToRole="loai_san_pham" />
+          <NavigationProperty Name="san_pham" Relationship="Self.FK__san_pham__nhom_s__04E4BC85" FromRole="nhom_sp" ToRole="san_pham" />
         </EntityType>
         <EntityType Name="san_pham">
           <Key>
@@ -831,11 +799,11 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
           <Property Name="Hinh_9" Type="String" MaxLength="60" FixedLength="true" Unicode="false" />
           <Property Name="Hinh_10" Type="String" MaxLength="60" FixedLength="true" Unicode="false" />
           <Property Name="nhom_sp_id" Type="Int32" />
-          <NavigationProperty Name="chi_tiet_hoa_don" Relationship="Self.FK__chi_tiet___san_p__398D8EEE" FromRole="san_pham" ToRole="chi_tiet_hoa_don" />
+          <NavigationProperty Name="chi_tiet_hoa_don" Relationship="Self.FK__chi_tiet___san_p__6EF57B66" FromRole="san_pham" ToRole="chi_tiet_hoa_don" />
           <NavigationProperty Name="color" Relationship="Self.FK_colorID" FromRole="san_pham" ToRole="color" />
           <NavigationProperty Name="loai_san_pham" Relationship="Self.FK_loai_sp" FromRole="san_pham" ToRole="loai_san_pham" />
-          <NavigationProperty Name="nhom_sp" Relationship="Self.fk_nhom_sp" FromRole="san_pham" ToRole="nhom_sp" />
-          <NavigationProperty Name="chi_tiet_don_dat_hang" Relationship="Self.FK__chi_tiet___san_p__2E1BDC42" FromRole="san_pham" ToRole="chi_tiet_don_dat_hang" />
+          <NavigationProperty Name="nhom_sp" Relationship="Self.FK__san_pham__nhom_s__04E4BC85" FromRole="san_pham" ToRole="nhom_sp" />
+          <NavigationProperty Name="chi_tiet_don_dat_hang" Relationship="Self.FK__chi_tiet___san_p__6477ECF3" FromRole="san_pham" ToRole="chi_tiet_don_dat_hang" />
           <NavigationProperty Name="size" Relationship="Self.FK_size" FromRole="san_pham" ToRole="size" />
           <NavigationProperty Name="trang_thai_sp" Relationship="Self.FK_trang_thai" FromRole="san_pham" ToRole="trang_thai_sp" />
         </EntityType>
@@ -846,19 +814,9 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Code" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
           <Property Name="Size1" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-          <NavigationProperty Name="chi_tiet_hoa_don" Relationship="Self.FK__chi_tiet___size___3B75D760" FromRole="size" ToRole="chi_tiet_hoa_don" />
+          <NavigationProperty Name="chi_tiet_hoa_don" Relationship="Self.FK__chi_tiet___size___70DDC3D8" FromRole="size" ToRole="chi_tiet_hoa_don" />
           <NavigationProperty Name="san_pham" Relationship="Self.FK_size" FromRole="size" ToRole="san_pham" />
-          <NavigationProperty Name="chi_tiet_don_dat_hang" Relationship="Self.FK__chi_tiet___size___300424B4" FromRole="size" ToRole="chi_tiet_don_dat_hang" />
-        </EntityType>
-        <EntityType Name="sysdiagram">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="chi_tiet_don_dat_hang" Relationship="Self.FK__chi_tiet___size___66603565" FromRole="size" ToRole="chi_tiet_don_dat_hang" />
         </EntityType>
         <EntityType Name="trang_thai_ddh">
           <Key>
@@ -868,7 +826,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
           <Property Name="Code" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
           <Property Name="Name" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="don_dat_hang" Relationship="Self.FK_trang_thai_ddh" FromRole="trang_thai_ddh" ToRole="don_dat_hang" />
-          <NavigationProperty Name="hoa_don" Relationship="Self.FK__hoa_don__trang_t__35BCFE0A" FromRole="trang_thai_ddh" ToRole="hoa_don" />
+          <NavigationProperty Name="hoa_don" Relationship="Self.FK__hoa_don__trang_t__6B24EA82" FromRole="trang_thai_ddh" ToRole="hoa_don" />
         </EntityType>
         <EntityType Name="trang_thai_sp">
           <Key>
@@ -893,14 +851,30 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
           <Property Name="loai_sp_id" Type="Int32" />
           <Property Name="size_id" Type="Int32" />
           <Property Name="color_id" Type="Int32" />
-          <NavigationProperty Name="color" Relationship="Self.FK__chi_tiet___color__30F848ED" FromRole="chi_tiet_don_dat_hang" ToRole="color" />
-          <NavigationProperty Name="don_dat_hang" Relationship="Self.FK__chi_tiet___don_d__2C3393D0" FromRole="chi_tiet_don_dat_hang" ToRole="don_dat_hang" />
-          <NavigationProperty Name="khach_hang" Relationship="Self.FK__chi_tiet___custo__2D27B809" FromRole="chi_tiet_don_dat_hang" ToRole="khach_hang" />
-          <NavigationProperty Name="loai_san_pham" Relationship="Self.FK__chi_tiet___loai___2F10007B" FromRole="chi_tiet_don_dat_hang" ToRole="loai_san_pham" />
-          <NavigationProperty Name="san_pham" Relationship="Self.FK__chi_tiet___san_p__2E1BDC42" FromRole="chi_tiet_don_dat_hang" ToRole="san_pham" />
-          <NavigationProperty Name="size" Relationship="Self.FK__chi_tiet___size___300424B4" FromRole="chi_tiet_don_dat_hang" ToRole="size" />
+          <NavigationProperty Name="color" Relationship="Self.FK__chi_tiet___color__6754599E" FromRole="chi_tiet_don_dat_hang" ToRole="color" />
+          <NavigationProperty Name="don_dat_hang" Relationship="Self.FK__chi_tiet___don_d__628FA481" FromRole="chi_tiet_don_dat_hang" ToRole="don_dat_hang" />
+          <NavigationProperty Name="khach_hang" Relationship="Self.FK__chi_tiet___custo__6383C8BA" FromRole="chi_tiet_don_dat_hang" ToRole="khach_hang" />
+          <NavigationProperty Name="loai_san_pham" Relationship="Self.FK__chi_tiet___loai___656C112C" FromRole="chi_tiet_don_dat_hang" ToRole="loai_san_pham" />
+          <NavigationProperty Name="san_pham" Relationship="Self.FK__chi_tiet___san_p__6477ECF3" FromRole="chi_tiet_don_dat_hang" ToRole="san_pham" />
+          <NavigationProperty Name="size" Relationship="Self.FK__chi_tiet___size___66603565" FromRole="chi_tiet_don_dat_hang" ToRole="size" />
         </EntityType>
-        <Association Name="FK__account_c__custo__3F466844">
+        <EntityType Name="database_firewall_rules">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="start_ip_address" />
+            <PropertyRef Name="end_ip_address" />
+            <PropertyRef Name="create_date" />
+            <PropertyRef Name="modify_date" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="start_ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="end_ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modify_date" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <Association Name="FK__account_c__custo__74AE54BC">
           <End Role="khach_hang" Type="Self.khach_hang" Multiplicity="0..1" />
           <End Role="account_customer" Type="Self.account_customer" Multiplicity="*" />
           <ReferentialConstraint>
@@ -912,7 +886,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__chi_tiet___color__3C69FB99">
+        <Association Name="FK__chi_tiet___color__71D1E811">
           <End Role="color" Type="Self.color" Multiplicity="0..1" />
           <End Role="chi_tiet_hoa_don" Type="Self.chi_tiet_hoa_don" Multiplicity="*" />
           <ReferentialConstraint>
@@ -924,7 +898,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__chi_tiet___custo__38996AB5">
+        <Association Name="FK__chi_tiet___custo__6E01572D">
           <End Role="khach_hang" Type="Self.khach_hang" Multiplicity="0..1" />
           <End Role="chi_tiet_hoa_don" Type="Self.chi_tiet_hoa_don" Multiplicity="*" />
           <ReferentialConstraint>
@@ -936,7 +910,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__chi_tiet___don_d__3D5E1FD2">
+        <Association Name="FK__chi_tiet___don_d__72C60C4A">
           <End Role="don_dat_hang" Type="Self.don_dat_hang" Multiplicity="0..1" />
           <End Role="chi_tiet_hoa_don" Type="Self.chi_tiet_hoa_don" Multiplicity="*" />
           <ReferentialConstraint>
@@ -948,7 +922,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__chi_tiet___hoa_d__37A5467C">
+        <Association Name="FK__chi_tiet___hoa_d__6D0D32F4">
           <End Role="hoa_don" Type="Self.hoa_don" Multiplicity="0..1" />
           <End Role="chi_tiet_hoa_don" Type="Self.chi_tiet_hoa_don" Multiplicity="*" />
           <ReferentialConstraint>
@@ -960,7 +934,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__chi_tiet___loai___3A81B327">
+        <Association Name="FK__chi_tiet___loai___6FE99F9F">
           <End Role="loai_san_pham" Type="Self.loai_san_pham" Multiplicity="0..1" />
           <End Role="chi_tiet_hoa_don" Type="Self.chi_tiet_hoa_don" Multiplicity="*" />
           <ReferentialConstraint>
@@ -972,7 +946,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__chi_tiet___san_p__398D8EEE">
+        <Association Name="FK__chi_tiet___san_p__6EF57B66">
           <End Role="san_pham" Type="Self.san_pham" Multiplicity="0..1" />
           <End Role="chi_tiet_hoa_don" Type="Self.chi_tiet_hoa_don" Multiplicity="*" />
           <ReferentialConstraint>
@@ -984,7 +958,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__chi_tiet___size___3B75D760">
+        <Association Name="FK__chi_tiet___size___70DDC3D8">
           <End Role="size" Type="Self.size" Multiplicity="0..1" />
           <End Role="chi_tiet_hoa_don" Type="Self.chi_tiet_hoa_don" Multiplicity="*" />
           <ReferentialConstraint>
@@ -996,7 +970,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__chi_tiet___color__30F848ED">
+        <Association Name="FK__chi_tiet___color__6754599E">
           <End Role="color" Type="Self.color" Multiplicity="0..1" />
           <End Role="chi_tiet_don_dat_hang" Type="Self.chi_tiet_don_dat_hang" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1020,7 +994,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__chi_tiet___don_d__2C3393D0">
+        <Association Name="FK__chi_tiet___don_d__628FA481">
           <End Role="don_dat_hang" Type="Self.don_dat_hang" Multiplicity="0..1" />
           <End Role="chi_tiet_don_dat_hang" Type="Self.chi_tiet_don_dat_hang" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1032,7 +1006,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__hoa_don__don_dh___34C8D9D1">
+        <Association Name="FK__hoa_don__don_dh___6A30C649">
           <End Role="don_dat_hang" Type="Self.don_dat_hang" Multiplicity="0..1" />
           <End Role="hoa_don" Type="Self.hoa_don" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1068,7 +1042,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__hoa_don__custome__32E0915F">
+        <Association Name="FK__hoa_don__custome__693CA210">
           <End Role="khach_hang" Type="Self.khach_hang" Multiplicity="0..1" />
           <End Role="hoa_don" Type="Self.hoa_don" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1080,19 +1054,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__hoa_don__custome__33D4B598">
-          <End Role="khach_hang" Type="Self.khach_hang" Multiplicity="0..1" />
-          <End Role="hoa_don" Type="Self.hoa_don" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="khach_hang">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="hoa_don">
-              <PropertyRef Name="customer_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__hoa_don__trang_t__35BCFE0A">
+        <Association Name="FK__hoa_don__trang_t__6B24EA82">
           <End Role="trang_thai_ddh" Type="Self.trang_thai_ddh" Multiplicity="0..1" />
           <End Role="hoa_don" Type="Self.hoa_don" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1104,7 +1066,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__chi_tiet___custo__2D27B809">
+        <Association Name="FK__chi_tiet___custo__6383C8BA">
           <End Role="khach_hang" Type="Self.khach_hang" Multiplicity="0..1" />
           <End Role="chi_tiet_don_dat_hang" Type="Self.chi_tiet_don_dat_hang" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1116,7 +1078,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__chi_tiet___loai___2F10007B">
+        <Association Name="FK__chi_tiet___loai___656C112C">
           <End Role="loai_san_pham" Type="Self.loai_san_pham" Multiplicity="0..1" />
           <End Role="chi_tiet_don_dat_hang" Type="Self.chi_tiet_don_dat_hang" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1128,7 +1090,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__loai_san___nhom___5DCAEF64">
+        <Association Name="FK__loai_san___nhom___05D8E0BE">
           <End Role="nhom_sp" Type="Self.nhom_sp" Multiplicity="0..1" />
           <End Role="loai_san_pham" Type="Self.loai_san_pham" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1152,7 +1114,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="fk_nhom_sp">
+        <Association Name="FK__san_pham__nhom_s__04E4BC85">
           <End Role="nhom_sp" Type="Self.nhom_sp" Multiplicity="0..1" />
           <End Role="san_pham" Type="Self.san_pham" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1164,7 +1126,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__chi_tiet___san_p__2E1BDC42">
+        <Association Name="FK__chi_tiet___san_p__6477ECF3">
           <End Role="san_pham" Type="Self.san_pham" Multiplicity="0..1" />
           <End Role="chi_tiet_don_dat_hang" Type="Self.chi_tiet_don_dat_hang" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1200,7 +1162,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__chi_tiet___size___300424B4">
+        <Association Name="FK__chi_tiet___size___66603565">
           <End Role="size" Type="Self.size" Multiplicity="0..1" />
           <End Role="chi_tiet_don_dat_hang" Type="Self.chi_tiet_don_dat_hang" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1212,7 +1174,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="FastSportEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="fastsport_dbEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="abouts" EntityType="Self.about" />
           <EntitySet Name="account_admin" EntityType="Self.account_admin" />
           <EntitySet Name="account_customer" EntityType="Self.account_customer" />
@@ -1225,43 +1187,43 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
           <EntitySet Name="nhom_sp" EntityType="Self.nhom_sp" />
           <EntitySet Name="san_pham" EntityType="Self.san_pham" />
           <EntitySet Name="sizes" EntityType="Self.size" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="trang_thai_ddh" EntityType="Self.trang_thai_ddh" />
           <EntitySet Name="trang_thai_sp" EntityType="Self.trang_thai_sp" />
           <EntitySet Name="chi_tiet_don_dat_hang" EntityType="Self.chi_tiet_don_dat_hang" />
-          <AssociationSet Name="FK__account_c__custo__3F466844" Association="Self.FK__account_c__custo__3F466844">
+          <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" />
+          <AssociationSet Name="FK__account_c__custo__74AE54BC" Association="Self.FK__account_c__custo__74AE54BC">
             <End Role="khach_hang" EntitySet="khach_hang" />
             <End Role="account_customer" EntitySet="account_customer" />
           </AssociationSet>
-          <AssociationSet Name="FK__chi_tiet___color__3C69FB99" Association="Self.FK__chi_tiet___color__3C69FB99">
+          <AssociationSet Name="FK__chi_tiet___color__71D1E811" Association="Self.FK__chi_tiet___color__71D1E811">
             <End Role="color" EntitySet="colors" />
             <End Role="chi_tiet_hoa_don" EntitySet="chi_tiet_hoa_don" />
           </AssociationSet>
-          <AssociationSet Name="FK__chi_tiet___custo__38996AB5" Association="Self.FK__chi_tiet___custo__38996AB5">
+          <AssociationSet Name="FK__chi_tiet___custo__6E01572D" Association="Self.FK__chi_tiet___custo__6E01572D">
             <End Role="khach_hang" EntitySet="khach_hang" />
             <End Role="chi_tiet_hoa_don" EntitySet="chi_tiet_hoa_don" />
           </AssociationSet>
-          <AssociationSet Name="FK__chi_tiet___don_d__3D5E1FD2" Association="Self.FK__chi_tiet___don_d__3D5E1FD2">
+          <AssociationSet Name="FK__chi_tiet___don_d__72C60C4A" Association="Self.FK__chi_tiet___don_d__72C60C4A">
             <End Role="don_dat_hang" EntitySet="don_dat_hang" />
             <End Role="chi_tiet_hoa_don" EntitySet="chi_tiet_hoa_don" />
           </AssociationSet>
-          <AssociationSet Name="FK__chi_tiet___hoa_d__37A5467C" Association="Self.FK__chi_tiet___hoa_d__37A5467C">
+          <AssociationSet Name="FK__chi_tiet___hoa_d__6D0D32F4" Association="Self.FK__chi_tiet___hoa_d__6D0D32F4">
             <End Role="hoa_don" EntitySet="hoa_don" />
             <End Role="chi_tiet_hoa_don" EntitySet="chi_tiet_hoa_don" />
           </AssociationSet>
-          <AssociationSet Name="FK__chi_tiet___loai___3A81B327" Association="Self.FK__chi_tiet___loai___3A81B327">
+          <AssociationSet Name="FK__chi_tiet___loai___6FE99F9F" Association="Self.FK__chi_tiet___loai___6FE99F9F">
             <End Role="loai_san_pham" EntitySet="loai_san_pham" />
             <End Role="chi_tiet_hoa_don" EntitySet="chi_tiet_hoa_don" />
           </AssociationSet>
-          <AssociationSet Name="FK__chi_tiet___san_p__398D8EEE" Association="Self.FK__chi_tiet___san_p__398D8EEE">
+          <AssociationSet Name="FK__chi_tiet___san_p__6EF57B66" Association="Self.FK__chi_tiet___san_p__6EF57B66">
             <End Role="san_pham" EntitySet="san_pham" />
             <End Role="chi_tiet_hoa_don" EntitySet="chi_tiet_hoa_don" />
           </AssociationSet>
-          <AssociationSet Name="FK__chi_tiet___size___3B75D760" Association="Self.FK__chi_tiet___size___3B75D760">
+          <AssociationSet Name="FK__chi_tiet___size___70DDC3D8" Association="Self.FK__chi_tiet___size___70DDC3D8">
             <End Role="size" EntitySet="sizes" />
             <End Role="chi_tiet_hoa_don" EntitySet="chi_tiet_hoa_don" />
           </AssociationSet>
-          <AssociationSet Name="FK__chi_tiet___color__30F848ED" Association="Self.FK__chi_tiet___color__30F848ED">
+          <AssociationSet Name="FK__chi_tiet___color__6754599E" Association="Self.FK__chi_tiet___color__6754599E">
             <End Role="color" EntitySet="colors" />
             <End Role="chi_tiet_don_dat_hang" EntitySet="chi_tiet_don_dat_hang" />
           </AssociationSet>
@@ -1269,11 +1231,11 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             <End Role="color" EntitySet="colors" />
             <End Role="san_pham" EntitySet="san_pham" />
           </AssociationSet>
-          <AssociationSet Name="FK__chi_tiet___don_d__2C3393D0" Association="Self.FK__chi_tiet___don_d__2C3393D0">
+          <AssociationSet Name="FK__chi_tiet___don_d__628FA481" Association="Self.FK__chi_tiet___don_d__628FA481">
             <End Role="don_dat_hang" EntitySet="don_dat_hang" />
             <End Role="chi_tiet_don_dat_hang" EntitySet="chi_tiet_don_dat_hang" />
           </AssociationSet>
-          <AssociationSet Name="FK__hoa_don__don_dh___34C8D9D1" Association="Self.FK__hoa_don__don_dh___34C8D9D1">
+          <AssociationSet Name="FK__hoa_don__don_dh___6A30C649" Association="Self.FK__hoa_don__don_dh___6A30C649">
             <End Role="don_dat_hang" EntitySet="don_dat_hang" />
             <End Role="hoa_don" EntitySet="hoa_don" />
           </AssociationSet>
@@ -1285,27 +1247,23 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             <End Role="trang_thai_ddh" EntitySet="trang_thai_ddh" />
             <End Role="don_dat_hang" EntitySet="don_dat_hang" />
           </AssociationSet>
-          <AssociationSet Name="FK__hoa_don__custome__32E0915F" Association="Self.FK__hoa_don__custome__32E0915F">
+          <AssociationSet Name="FK__hoa_don__custome__693CA210" Association="Self.FK__hoa_don__custome__693CA210">
             <End Role="khach_hang" EntitySet="khach_hang" />
             <End Role="hoa_don" EntitySet="hoa_don" />
           </AssociationSet>
-          <AssociationSet Name="FK__hoa_don__custome__33D4B598" Association="Self.FK__hoa_don__custome__33D4B598">
-            <End Role="khach_hang" EntitySet="khach_hang" />
-            <End Role="hoa_don" EntitySet="hoa_don" />
-          </AssociationSet>
-          <AssociationSet Name="FK__hoa_don__trang_t__35BCFE0A" Association="Self.FK__hoa_don__trang_t__35BCFE0A">
+          <AssociationSet Name="FK__hoa_don__trang_t__6B24EA82" Association="Self.FK__hoa_don__trang_t__6B24EA82">
             <End Role="trang_thai_ddh" EntitySet="trang_thai_ddh" />
             <End Role="hoa_don" EntitySet="hoa_don" />
           </AssociationSet>
-          <AssociationSet Name="FK__chi_tiet___custo__2D27B809" Association="Self.FK__chi_tiet___custo__2D27B809">
+          <AssociationSet Name="FK__chi_tiet___custo__6383C8BA" Association="Self.FK__chi_tiet___custo__6383C8BA">
             <End Role="khach_hang" EntitySet="khach_hang" />
             <End Role="chi_tiet_don_dat_hang" EntitySet="chi_tiet_don_dat_hang" />
           </AssociationSet>
-          <AssociationSet Name="FK__chi_tiet___loai___2F10007B" Association="Self.FK__chi_tiet___loai___2F10007B">
+          <AssociationSet Name="FK__chi_tiet___loai___656C112C" Association="Self.FK__chi_tiet___loai___656C112C">
             <End Role="loai_san_pham" EntitySet="loai_san_pham" />
             <End Role="chi_tiet_don_dat_hang" EntitySet="chi_tiet_don_dat_hang" />
           </AssociationSet>
-          <AssociationSet Name="FK__loai_san___nhom___5DCAEF64" Association="Self.FK__loai_san___nhom___5DCAEF64">
+          <AssociationSet Name="FK__loai_san___nhom___05D8E0BE" Association="Self.FK__loai_san___nhom___05D8E0BE">
             <End Role="nhom_sp" EntitySet="nhom_sp" />
             <End Role="loai_san_pham" EntitySet="loai_san_pham" />
           </AssociationSet>
@@ -1313,11 +1271,11 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             <End Role="loai_san_pham" EntitySet="loai_san_pham" />
             <End Role="san_pham" EntitySet="san_pham" />
           </AssociationSet>
-          <AssociationSet Name="fk_nhom_sp" Association="Self.fk_nhom_sp">
+          <AssociationSet Name="FK__san_pham__nhom_s__04E4BC85" Association="Self.FK__san_pham__nhom_s__04E4BC85">
             <End Role="nhom_sp" EntitySet="nhom_sp" />
             <End Role="san_pham" EntitySet="san_pham" />
           </AssociationSet>
-          <AssociationSet Name="FK__chi_tiet___san_p__2E1BDC42" Association="Self.FK__chi_tiet___san_p__2E1BDC42">
+          <AssociationSet Name="FK__chi_tiet___san_p__6477ECF3" Association="Self.FK__chi_tiet___san_p__6477ECF3">
             <End Role="san_pham" EntitySet="san_pham" />
             <End Role="chi_tiet_don_dat_hang" EntitySet="chi_tiet_don_dat_hang" />
           </AssociationSet>
@@ -1329,60 +1287,19 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             <End Role="trang_thai_sp" EntitySet="trang_thai_sp" />
             <End Role="san_pham" EntitySet="san_pham" />
           </AssociationSet>
-          <AssociationSet Name="FK__chi_tiet___size___300424B4" Association="Self.FK__chi_tiet___size___300424B4">
+          <AssociationSet Name="FK__chi_tiet___size___66603565" Association="Self.FK__chi_tiet___size___66603565">
             <End Role="size" EntitySet="sizes" />
             <End Role="chi_tiet_don_dat_hang" EntitySet="chi_tiet_don_dat_hang" />
           </AssociationSet>
-          <FunctionImport Name="sp_alterdiagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="version" Mode="In" Type="Int32" />
-            <Parameter Name="definition" Mode="In" Type="Binary" />
-          </FunctionImport>
-          <FunctionImport Name="sp_creatediagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="version" Mode="In" Type="Int32" />
-            <Parameter Name="definition" Mode="In" Type="Binary" />
-          </FunctionImport>
-          <FunctionImport Name="sp_dropdiagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(FastSportModel.sp_helpdiagramdefinition_Result)">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(FastSportModel.sp_helpdiagrams_Result)">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_renamediagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="new_diagramname" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="sp_upgraddiagrams" />
         </EntityContainer>
-        <ComplexType Name="sp_helpdiagramdefinition_Result">
-          <Property Type="Int32" Name="version" Nullable="true" />
-          <Property Type="Binary" Name="definition" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="sp_helpdiagrams_Result">
-          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
-          <Property Type="Int32" Name="OwnerID" Nullable="false" />
-        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="FastSportModelStoreContainer" CdmEntityContainer="FastSportEntities">
+        <EntityContainerMapping StorageEntityContainer="fastsport_dbModelStoreContainer" CdmEntityContainer="fastsport_dbEntities">
           <EntitySetMapping Name="abouts">
-            <EntityTypeMapping TypeName="FastSportModel.about">
+            <EntityTypeMapping TypeName="fastsport_dbModel.about">
               <MappingFragment StoreEntitySet="about">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="phone" ColumnName="phone" />
@@ -1395,7 +1312,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="account_admin">
-            <EntityTypeMapping TypeName="FastSportModel.account_admin">
+            <EntityTypeMapping TypeName="fastsport_dbModel.account_admin">
               <MappingFragment StoreEntitySet="account_admin">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="login_id" ColumnName="login_id" />
@@ -1406,7 +1323,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="account_customer">
-            <EntityTypeMapping TypeName="FastSportModel.account_customer">
+            <EntityTypeMapping TypeName="fastsport_dbModel.account_customer">
               <MappingFragment StoreEntitySet="account_customer">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="login_id" ColumnName="login_id" />
@@ -1416,7 +1333,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="chi_tiet_hoa_don">
-            <EntityTypeMapping TypeName="FastSportModel.chi_tiet_hoa_don">
+            <EntityTypeMapping TypeName="fastsport_dbModel.chi_tiet_hoa_don">
               <MappingFragment StoreEntitySet="chi_tiet_hoa_don">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ngay_lap_hd" ColumnName="ngay_lap_hd" />
@@ -1431,7 +1348,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="colors">
-            <EntityTypeMapping TypeName="FastSportModel.color">
+            <EntityTypeMapping TypeName="fastsport_dbModel.color">
               <MappingFragment StoreEntitySet="color">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Code" ColumnName="Code" />
@@ -1440,7 +1357,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="don_dat_hang">
-            <EntityTypeMapping TypeName="FastSportModel.don_dat_hang">
+            <EntityTypeMapping TypeName="fastsport_dbModel.don_dat_hang">
               <MappingFragment StoreEntitySet="don_dat_hang">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Code" ColumnName="Code" />
@@ -1454,7 +1371,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="hoa_don">
-            <EntityTypeMapping TypeName="FastSportModel.hoa_don">
+            <EntityTypeMapping TypeName="fastsport_dbModel.hoa_don">
               <MappingFragment StoreEntitySet="hoa_don">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Code" ColumnName="Code" />
@@ -1465,7 +1382,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="khach_hang">
-            <EntityTypeMapping TypeName="FastSportModel.khach_hang">
+            <EntityTypeMapping TypeName="fastsport_dbModel.khach_hang">
               <MappingFragment StoreEntitySet="khach_hang">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Code" ColumnName="Code" />
@@ -1478,7 +1395,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="loai_san_pham">
-            <EntityTypeMapping TypeName="FastSportModel.loai_san_pham">
+            <EntityTypeMapping TypeName="fastsport_dbModel.loai_san_pham">
               <MappingFragment StoreEntitySet="loai_san_pham">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Code" ColumnName="Code" />
@@ -1488,7 +1405,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="nhom_sp">
-            <EntityTypeMapping TypeName="FastSportModel.nhom_sp">
+            <EntityTypeMapping TypeName="fastsport_dbModel.nhom_sp">
               <MappingFragment StoreEntitySet="nhom_sp">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Code" ColumnName="Code" />
@@ -1497,7 +1414,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="san_pham">
-            <EntityTypeMapping TypeName="FastSportModel.san_pham">
+            <EntityTypeMapping TypeName="fastsport_dbModel.san_pham">
               <MappingFragment StoreEntitySet="san_pham">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Code" ColumnName="Code" />
@@ -1523,7 +1440,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sizes">
-            <EntityTypeMapping TypeName="FastSportModel.size">
+            <EntityTypeMapping TypeName="fastsport_dbModel.size">
               <MappingFragment StoreEntitySet="size">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Code" ColumnName="Code" />
@@ -1531,19 +1448,8 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="FastSportModel.sysdiagram">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="trang_thai_ddh">
-            <EntityTypeMapping TypeName="FastSportModel.trang_thai_ddh">
+            <EntityTypeMapping TypeName="fastsport_dbModel.trang_thai_ddh">
               <MappingFragment StoreEntitySet="trang_thai_ddh">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Code" ColumnName="Code" />
@@ -1552,7 +1458,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="trang_thai_sp">
-            <EntityTypeMapping TypeName="FastSportModel.trang_thai_sp">
+            <EntityTypeMapping TypeName="fastsport_dbModel.trang_thai_sp">
               <MappingFragment StoreEntitySet="trang_thai_sp">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Code" ColumnName="Code" />
@@ -1561,7 +1467,7 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="chi_tiet_don_dat_hang">
-            <EntityTypeMapping TypeName="FastSportModel.chi_tiet_don_dat_hang">
+            <EntityTypeMapping TypeName="fastsport_dbModel.chi_tiet_don_dat_hang">
               <MappingFragment StoreEntitySet="chi_tiet_don_dat_hang">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Don_gia" ColumnName="Don_gia" />
@@ -1576,30 +1482,18 @@ warning 6002: The table/view 'FastSport.dbo.chi_tiet_don_dat_hang' does not have
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="FastSportModel.Store.sp_alterdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="FastSportModel.Store.sp_creatediagram" />
-          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="FastSportModel.Store.sp_dropdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="FastSportModel.Store.sp_helpdiagramdefinition">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="FastSportModel.sp_helpdiagramdefinition_Result">
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="FastSportModel.Store.sp_helpdiagrams">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="FastSportModel.sp_helpdiagrams_Result">
-                <ScalarProperty Name="Database" ColumnName="Database" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Owner" ColumnName="Owner" />
-                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="FastSportModel.Store.sp_renamediagram" />
-          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="FastSportModel.Store.sp_upgraddiagrams" />
+          <EntitySetMapping Name="database_firewall_rules">
+            <EntityTypeMapping TypeName="fastsport_dbModel.database_firewall_rules">
+              <MappingFragment StoreEntitySet="database_firewall_rules">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="start_ip_address" ColumnName="start_ip_address" />
+                <ScalarProperty Name="end_ip_address" ColumnName="end_ip_address" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+                <ScalarProperty Name="modify_date" ColumnName="modify_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

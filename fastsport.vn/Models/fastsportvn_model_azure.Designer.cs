@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\Minh Duc\FastSport.vn\fastsport.vn\fastsport.vn\Models\Fastsportvn_Model.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\Minh Duc\FastSport.vn\fastsport_ver_1.1\fastsport.vn\fastsport.vn\Models\fastsportvn_model_azure.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
