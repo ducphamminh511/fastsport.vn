@@ -50,35 +50,11 @@
                 <div class="flexslider">
 
                     <ul class="slides">
-                        <li ng-if="productDetail.Hinh_1" data-thumb="/images/HinhSP/{{productDetail.Hinh_1}}">
-                            <div class="thumb-image"> <img src="/images/HinhSP/{{productDetail.Hinh_1}}" data-imagezoom="true" class="img-responsive"> </div>
+                        <li ng-if="productDetail.Hinh_1" data-thumb="{{productDetail.Hinh_1}}">
+                            <div class="thumb-image"> <img ng-src="{{productDetail.Hinh_1}}" data-imagezoom="true" class="img-responsive"> </div>
                         </li>
-                        <li ng-if="productDetail.Hinh_2" data-thumb="/images/HinhSP/{{productDetail.Hinh_2}}">
-                            <div class="thumb-image"> <img src="/images/HinhSP/{{productDetail.Hinh_2}}" data-imagezoom="true" class="img-responsive"> </div>
-                        </li>
-                        <li ng-if="productDetail.Hinh_3" data-thumb="/images/HinhSP/{{productDetail.Hinh_3}}">
-                            <div class="thumb-image"> <img src="/images/HinhSP/{{productDetail.Hinh_3}}" data-imagezoom="true" class="img-responsive"> </div>
-                        </li>
-                        <li ng-if="productDetail.Hinh_4" data-thumb="/images/HinhSP/{{productDetail.Hinh_4}}">
-                            <div class="thumb-image"> <img src="/images/HinhSP/{{productDetail.Hinh_4}}" data-imagezoom="true" class="img-responsive"> </div>
-                        </li>
-                        <li ng-if="productDetail.Hinh_5" data-thumb="/images/HinhSP/{{productDetail.Hinh_5}}">
-                            <div class="thumb-image"> <img src="/images/HinhSP/{{productDetail.Hinh_5}}" data-imagezoom="true" class="img-responsive"> </div>
-                        </li>
-                        <li ng-if="productDetail.Hinh_6" data-thumb="/images/HinhSP/{{productDetail.Hinh_6}}">
-                            <div class="thumb-image"> <img src="/images/HinhSP/{{productDetail.Hinh_6}}" data-imagezoom="true" class="img-responsive"> </div>
-                        </li>
-                        <li ng-if="productDetail.Hinh_7" data-thumb="/images/HinhSP/{{productDetail.Hinh_7}}">
-                            <div class="thumb-image"> <img src="/images/HinhSP/{{productDetail.Hinh_7}}" data-imagezoom="true" class="img-responsive"> </div>
-                        </li>
-                        <li ng-if="productDetail.Hinh_8" data-thumb="/images/HinhSP/{{productDetail.Hinh_8}}">
-                            <div class="thumb-image"> <img src="/images/HinhSP/{{productDetail.Hinh_8}}" data-imagezoom="true" class="img-responsive"> </div>
-                        </li>
-                        <li ng-if="productDetail.Hinh_9" data-thumb="/images/HinhSP/{{productDetail.Hinh_9}}">
-                            <div class="thumb-image"> <img src="/images/HinhSP/{{productDetail.Hinh_9}}" data-imagezoom="true" class="img-responsive"> </div>
-                        </li>
-                        <li ng-if="productDetail.Hinh_10" data-thumb="/images/HinhSP/{{productDetail.Hinh_10}}">
-                            <div class="thumb-image"> <img src="/images/HinhSP/{{productDetail.Hinh_10}}" data-imagezoom="true" class="img-responsive"> </div>
+                        <li ng-if="productDetail.Hinh_2" data-thumb="{{productDetail.Hinh_2}}">
+                            <div class="thumb-image"> <img ng-src="{{productDetail.Hinh_2}}" data-imagezoom="true" class="img-responsive"> </div>
                         </li>
                     </ul>
                     <div class="clearfix"></div>
