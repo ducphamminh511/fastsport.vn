@@ -13,6 +13,7 @@
 
         $scope.results = [];
         $scope.hasResult = false;
+        $scope.cart = [];
 
         $scope.GetProduct = function () {
             MenNewFactory.Get8MenNews().then(function (response) {
@@ -88,6 +89,24 @@
                 $location.path('/Home/Detail');
             });
         };
+
+        $scope.addToCart = function (product) {
+            var index = $scope.cart.findIndex(x => x.code == product.Code);
+            if (index != -1) {
+                $scope.cart[index].quantity++ ;
+            } else {
+                $scope.cart.push({
+                    id: product.ID,
+                    code: product.Code,
+                    name: product.Name,
+                    price: product.Gia,
+                    sale_off: product.Sale_off,
+                    quantity: 1
+                });
+            }
+            console.log($scope.cart);
+            console.log($scope.cart.length);
+        }
 
 
     });
