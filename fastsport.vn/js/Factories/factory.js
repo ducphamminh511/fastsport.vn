@@ -17,3 +17,16 @@
     }
     return fac;
 });
+angular.module('Top8_Men_News').factory('WomenNewFactory', function ($http, HostConstant) {
+    var fac = {}
+    fac.Get8WomenNews = function () {
+        return $http({
+            url: `${HostConstant.hostUrl}/sanpham/get8newswomen`,
+            method: 'GET'
+        }).then(function (res) {
+            return res;
+        }).catch(function (err) {
+            return err;
+        });
+    }
+});

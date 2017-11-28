@@ -8,8 +8,8 @@ function configFunction($routeProvider, $locationProvider) {
     $routeProvider
         .when('/', {
             templateUrl: '/js/Template/Home.html',
-            controller: 'MenNewController',
-            //controllerAs: 'vm',
+            //controller: 'MenNewController',
+            ////controllerAs: 'vm',
         });
     //$locationProvider.html5Mode(true);
 };

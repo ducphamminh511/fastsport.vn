@@ -235,82 +235,84 @@
             </ul>
             <div>
                 <div>
-                    <div ng-controller="MenNewController">
-                        <div class="resp-tabs-container">
+                    <div >
+                        <div class="resp-tabs-container" >
                             <!--/tab_one-->
-                            <div class="tab1" ng-if="hasResult">
-                                <div class="col-md-3 product-men" ng-repeat="i in results">
-                                    <div class="men-pro-item simpleCart_shelfItem">
-                                        <div class="men-thumb-item">
-                                            <img ng-src="/images/HinhSP/{{i.Hinh_1}}" alt="{{i.Name}}" class="pro-image-front">
-                                            <img ng-src="/images/HinhSP/{{i.Hinh_2}}" alt="{{i.Name}}" class="pro-image-back">
-                                            <div class="men-cart-pro">
-                                                <div class="inner-men-cart-pro">
-                                                    <a ng-href="#!/Home/Detail/{{i.ID}}" class="link-product-add-cart">Chi Tiết</a>
+                            <div ng-controller="MenNewController"> 
+                                <div class="tab1" ng-if="hasResult">
+                                    <div class="col-md-3 product-men" ng-repeat="i in results">
+                                        <div class="men-pro-item simpleCart_shelfItem">
+                                            <div class="men-thumb-item">
+                                                <img ng-src="/images/HinhSP/{{i.Hinh_1}}" alt="{{i.Name}}" class="pro-image-front">
+                                                <img ng-src="/images/HinhSP/{{i.Hinh_2}}" alt="{{i.Name}}" class="pro-image-back">
+                                                <div class="men-cart-pro">
+                                                    <div class="inner-men-cart-pro">
+                                                        <a ng-href="#!/Home/Detail/{{i.ID}}" class="link-product-add-cart">Chi Tiết</a>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <span class="product-new-top">New</span>
+                                                <span class="product-new-top">New</span>
 
-                                        </div>
-                                        <div class="item-info-product ">
-                                            <h4><a ng-href="#!/Home/Detail/{{i.ID}}">{{i.Name}}</a></h4>
-                                            <div class="info-product-price">
-                                                <span class="item_price">{{i.Gia}}</span>
-                                                <del>{{i.Sale_off}}</del>
                                             </div>
-                                            <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-                                                <!--<form action="#" method="post">
-                                                    <fieldset>
-                                                        <input type="hidden" name="cmd" value="_cart" />
-                                                        <input type="hidden" name="add" value="1" />
-                                                        <input type="hidden" name="business" value=" " />
-                                                        <input type="hidden" name="item_name" value="{{i.Name}}" />
-                                                        <input type="hidden" name="amount" value="{{i.Gia}}" />
-                                                        <input type="hidden" name="discount_amount" value="{{i.Sale_off}}" />
-                                                        <input type="hidden" name="currency_code" value="USD" />
-                                                        <input type="hidden" name="return" value=" " />
-                                                        <input type="hidden" name="cancel_return" value=" " />
-                                                        <input type="submit" name="submit" value="THÊM VÀO GIỎ HÀNG" class="button" />
-                                                    </fieldset>
-                                                </form>-->
-                                                <input  ng-click="addToCart(i)" data-toggle="modal" data-target="#cart" value="THÊM VÀO GIỎ HÀNG" class="button text-center" />
-                                            </div>
+                                            <div class="item-info-product ">
+                                                <h4><a ng-href="#!/Home/Detail/{{i.ID}}">{{i.Name}}</a></h4>
+                                                <div class="info-product-price">
+                                                    <span class="item_price">{{i.Gia}}</span>
+                                                    <del>{{i.Sale_off}}</del>
+                                                </div>
+                                                <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                                                    <!--<form action="#" method="post">
+                            <fieldset>
+                                <input type="hidden" name="cmd" value="_cart" />
+                                <input type="hidden" name="add" value="1" />
+                                <input type="hidden" name="business" value=" " />
+                                <input type="hidden" name="item_name" value="{{i.Name}}" />
+                                <input type="hidden" name="amount" value="{{i.Gia}}" />
+                                <input type="hidden" name="discount_amount" value="{{i.Sale_off}}" />
+                                <input type="hidden" name="currency_code" value="USD" />
+                                <input type="hidden" name="return" value=" " />
+                                <input type="hidden" name="cancel_return" value=" " />
+                                <input type="submit" name="submit" value="THÊM VÀO GIỎ HÀNG" class="button" />
+                            </fieldset>
+                        </form>-->
+                                                    <input ng-click="addToCart(i)" data-toggle="modal" data-target="#cart" value="THÊM VÀO GIỎ HÀNG" class="button text-center" />
+                                                </div>
 
-                                            <!--Cart Modal-->
-                                            <div class="modal fade" id="cart" role="dialog">
-                                                <div class="modal-dialog">
+                                                <!--Cart Modal-->
+                                                <div class="modal fade" id="cart" role="dialog">
+                                                    <div class="modal-dialog">
 
-                                                    <!-- Modal content-->
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                            <h4 class="modal-title">Giỏ Hàng</h4>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                           
-                                                            <div >
-                                                                <ul>
-                                                                    <li ng-repeat="i in cart">
-                                                                        <div class="row">
-                                                                            <div class="col-md-7"> {{i.name}}</div>
-                                                                            <div class="col-md-2">{{i.quantity}}</div>
-                                                                            <div class="col-md-1">X</div>
-                                                                            <div class="col-md-2">{{i.price}}</div>
-                                                                        </div>
-                                                                    </li>
-                                                                </ul>
-                                                                
-                                                                
+                                                        <!-- Modal content-->
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                <h4 class="modal-title">Giỏ Hàng</h4>
+                                                            </div>
+                                                            <div class="modal-body">
+
+                                                                <div>
+                                                                    <ul>
+                                                                        <li ng-repeat="i in cart">
+                                                                            <div class="row">
+                                                                                <div class="col-md-7"> {{i.name}}</div>
+                                                                                <div class="col-md-2">{{i.quantity}}</div>
+                                                                                <div class="col-md-1">X</div>
+                                                                                <div class="col-md-2">{{i.price}}</div>
+                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                                             </div>
                                                         </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                        </div>
+
                                                     </div>
-
                                                 </div>
-                                            </div>
 
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -321,320 +323,88 @@
                             </div>
                             <!--//tab_one-->
                             <!--/tab_two-->
-                            <div class="tab2">
-                                <div class="col-md-3 product-men">
-                                    <div class="men-pro-item simpleCart_shelfItem">
-                                        <div class="men-thumb-item">
-                                            <img src="images/w1.jpg" alt="" class="pro-image-front">
-                                            <img src="images/w1.jpg" alt="" class="pro-image-back">
-                                            <div class="men-cart-pro">
-                                                <div class="inner-men-cart-pro">
-                                                    <a href="single.html" class="link-product-add-cart">Quick View</a>
+                            <div ng-controller="WomenNewController">
+                                <div class="tab1" ng-if="hasResultt">
+                                    <div class="col-md-3 product-men" ng-repeat="i in resultss">
+                                        <div class="men-pro-item simpleCart_shelfItem">
+                                            <div class="men-thumb-item">
+                                                <img ng-src="/images/HinhSP/{{i.Hinh_1}}" alt="{{i.Name}}" class="pro-image-front">
+                                                <img ng-src="/images/HinhSP/{{i.Hinh_2}}" alt="{{i.Name}}" class="pro-image-back">
+                                                <div class="men-cart-pro">
+                                                    <div class="inner-men-cart-pro">
+                                                        <a ng-href="#!/Home/Detail/{{i.ID}}" class="link-product-add-cart">Chi Tiết</a>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <span class="product-new-top">New</span>
+                                                <span class="product-new-top">New</span>
 
-                                        </div>
-                                        <div class="item-info-product ">
-                                            <h4><a href="single.html">A-line Black Skirt</a></h4>
-                                            <div class="info-product-price">
-                                                <span class="item_price">$130.99</span>
-                                                <del>$189.71</del>
                                             </div>
-                                            <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-                                                <form action="#" method="post">
-                                                    <fieldset>
-                                                        <input type="hidden" name="cmd" value="_cart" />
-                                                        <input type="hidden" name="add" value="1" />
-                                                        <input type="hidden" name="business" value=" " />
-                                                        <input type="hidden" name="item_name" value="A-line Black Skirt" />
-                                                        <input type="hidden" name="amount" value="30.99" />
-                                                        <input type="hidden" name="discount_amount" value="1.00" />
-                                                        <input type="hidden" name="currency_code" value="USD" />
-                                                        <input type="hidden" name="return" value=" " />
-                                                        <input type="hidden" name="cancel_return" value=" " />
-                                                        <input type="submit" name="submit" value="Add to cart" class="button" />
-                                                    </fieldset>
-                                                </form>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 product-men">
-                                    <div class="men-pro-item simpleCart_shelfItem">
-                                        <div class="men-thumb-item">
-                                            <img src="images/w2.jpg" alt="" class="pro-image-front">
-                                            <img src="images/w2.jpg" alt="" class="pro-image-back">
-                                            <div class="men-cart-pro">
-                                                <div class="inner-men-cart-pro">
-                                                    <a href="single.html" class="link-product-add-cart">Quick View</a>
+                                            <div class="item-info-product ">
+                                                <h4><a ng-href="#!/Home/Detail/{{i.ID}}">{{i.Name}}</a></h4>
+                                                <div class="info-product-price">
+                                                    <span class="item_price">{{i.Gia}}</span>
+                                                    <del>{{i.Sale_off}}</del>
                                                 </div>
-                                            </div>
-                                            <span class="product-new-top">New</span>
-
-                                        </div>
-                                        <div class="item-info-product ">
-                                            <h4><a href="single.html">Sleeveless Solid Blue Top</a></h4>
-                                            <div class="info-product-price">
-                                                <span class="item_price">$140.99</span>
-                                                <del>$189.71</del>
-                                            </div>
-                                            <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-                                                <form action="#" method="post">
-                                                    <fieldset>
-                                                        <input type="hidden" name="cmd" value="_cart" />
-                                                        <input type="hidden" name="add" value="1" />
-                                                        <input type="hidden" name="business" value=" " />
-                                                        <input type="hidden" name="item_name" value="Sleeveless Solid Blue Top" />
-                                                        <input type="hidden" name="amount" value="30.99" />
-                                                        <input type="hidden" name="discount_amount" value="1.00" />
-                                                        <input type="hidden" name="currency_code" value="USD" />
-                                                        <input type="hidden" name="return" value=" " />
-                                                        <input type="hidden" name="cancel_return" value=" " />
-                                                        <input type="submit" name="submit" value="Add to cart" class="button" />
-                                                    </fieldset>
-                                                </form>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 product-men">
-                                    <div class="men-pro-item simpleCart_shelfItem">
-                                        <div class="men-thumb-item">
-                                            <img src="images/w3.jpg" alt="" class="pro-image-front">
-                                            <img src="images/w3.jpg" alt="" class="pro-image-back">
-                                            <div class="men-cart-pro">
-                                                <div class="inner-men-cart-pro">
-                                                    <a href="single.html" class="link-product-add-cart">Quick View</a>
+                                                <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                                                    <!--<form action="#" method="post">
+                                <fieldset>
+                                    <input type="hidden" name="cmd" value="_cart" />
+                                    <input type="hidden" name="add" value="1" />
+                                    <input type="hidden" name="business" value=" " />
+                                    <input type="hidden" name="item_name" value="{{i.Name}}" />
+                                    <input type="hidden" name="amount" value="{{i.Gia}}" />
+                                    <input type="hidden" name="discount_amount" value="{{i.Sale_off}}" />
+                                    <input type="hidden" name="currency_code" value="USD" />
+                                    <input type="hidden" name="return" value=" " />
+                                    <input type="hidden" name="cancel_return" value=" " />
+                                    <input type="submit" name="submit" value="THÊM VÀO GIỎ HÀNG" class="button" />
+                                </fieldset>
+                            </form>-->
+                                                    <input ng-click="addToCart(i)" data-toggle="modal" data-target="#cart" value="THÊM VÀO GIỎ HÀNG" class="button text-center" />
                                                 </div>
-                                            </div>
-                                            <span class="product-new-top">New</span>
 
-                                        </div>
-                                        <div class="item-info-product ">
-                                            <h4><a href="single.html">Skinny Jeans</a></h4>
-                                            <div class="info-product-price">
-                                                <span class="item_price">$150.99</span>
-                                                <del>$189.71</del>
-                                            </div>
-                                            <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-                                                <form action="#" method="post">
-                                                    <fieldset>
-                                                        <input type="hidden" name="cmd" value="_cart" />
-                                                        <input type="hidden" name="add" value="1" />
-                                                        <input type="hidden" name="business" value=" " />
-                                                        <input type="hidden" name="item_name" value="Skinny Jeans " />
-                                                        <input type="hidden" name="amount" value="30.99" />
-                                                        <input type="hidden" name="discount_amount" value="1.00" />
-                                                        <input type="hidden" name="currency_code" value="USD" />
-                                                        <input type="hidden" name="return" value=" " />
-                                                        <input type="hidden" name="cancel_return" value=" " />
-                                                        <input type="submit" name="submit" value="Add to cart" class="button" />
-                                                    </fieldset>
-                                                </form>
-                                            </div>
+                                                <!--Cart Modal-->
+                                                <div class="modal fade" id="cart" role="dialog">
+                                                    <div class="modal-dialog">
 
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 product-men">
-                                    <div class="men-pro-item simpleCart_shelfItem">
-                                        <div class="men-thumb-item">
-                                            <img src="images/w4.jpg" alt="" class="pro-image-front">
-                                            <img src="images/w4.jpg" alt="" class="pro-image-back">
-                                            <div class="men-cart-pro">
-                                                <div class="inner-men-cart-pro">
-                                                    <a href="single.html" class="link-product-add-cart">Quick View</a>
+                                                        <!-- Modal content-->
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                <h4 class="modal-title">Giỏ Hàng</h4>
+                                                            </div>
+                                                            <div class="modal-body">
+
+                                                                <div>
+                                                                    <ul>
+                                                                        <li ng-repeat="i in cart">
+                                                                            <div class="row">
+                                                                                <div class="col-md-7"> {{i.name}}</div>
+                                                                                <div class="col-md-2">{{i.quantity}}</div>
+                                                                                <div class="col-md-1">X</div>
+                                                                                <div class="col-md-2">{{i.price}}</div>
+                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <span class="product-new-top">New</span>
 
-                                        </div>
-                                        <div class="item-info-product ">
-                                            <h4><a href="single.html">Black Basic Shorts</a></h4>
-                                            <div class="info-product-price">
-                                                <span class="item_price">$120.99</span>
-                                                <del>$189.71</del>
                                             </div>
-                                            <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-                                                <form action="#" method="post">
-                                                    <fieldset>
-                                                        <input type="hidden" name="cmd" value="_cart" />
-                                                        <input type="hidden" name="add" value="1" />
-                                                        <input type="hidden" name="business" value=" " />
-                                                        <input type="hidden" name="item_name" value="Black Basic Shorts" />
-                                                        <input type="hidden" name="amount" value="30.99" />
-                                                        <input type="hidden" name="discount_amount" value="1.00" />
-                                                        <input type="hidden" name="currency_code" value="USD" />
-                                                        <input type="hidden" name="return" value=" " />
-                                                        <input type="hidden" name="cancel_return" value=" " />
-                                                        <input type="submit" name="submit" value="Add to cart" class="button" />
-                                                    </fieldset>
-                                                </form>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 product-men">
-                                    <div class="men-pro-item simpleCart_shelfItem">
-                                        <div class="men-thumb-item">
-                                            <img src="images/w5.jpg" alt="" class="pro-image-front">
-                                            <img src="images/w5.jpg" alt="" class="pro-image-back">
-                                            <div class="men-cart-pro">
-                                                <div class="inner-men-cart-pro">
-                                                    <a href="single.html" class="link-product-add-cart">Quick View</a>
-                                                </div>
-                                            </div>
-                                            <span class="product-new-top">New</span>
-
-                                        </div>
-                                        <div class="item-info-product ">
-                                            <h4><a href="single.html">Pink Track Pants</a></h4>
-                                            <div class="info-product-price">
-                                                <span class="item_price">$220.99</span>
-                                                <del>$389.71</del>
-                                            </div>
-                                            <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-                                                <form action="#" method="post">
-                                                    <fieldset>
-                                                        <input type="hidden" name="cmd" value="_cart" />
-                                                        <input type="hidden" name="add" value="1" />
-                                                        <input type="hidden" name="business" value=" " />
-                                                        <input type="hidden" name="item_name" value="Pink Track Pants" />
-                                                        <input type="hidden" name="amount" value="30.99" />
-                                                        <input type="hidden" name="discount_amount" value="1.00" />
-                                                        <input type="hidden" name="currency_code" value="USD" />
-                                                        <input type="hidden" name="return" value=" " />
-                                                        <input type="hidden" name="cancel_return" value=" " />
-                                                        <input type="submit" name="submit" value="Add to cart" class="button" />
-                                                    </fieldset>
-                                                </form>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 product-men">
-                                    <div class="men-pro-item simpleCart_shelfItem">
-                                        <div class="men-thumb-item">
-                                            <img src="images/w6.jpg" alt="" class="pro-image-front">
-                                            <img src="images/w6.jpg" alt="" class="pro-image-back">
-                                            <div class="men-cart-pro">
-                                                <div class="inner-men-cart-pro">
-                                                    <a href="single.html" class="link-product-add-cart">Quick View</a>
-                                                </div>
-                                            </div>
-                                            <span class="product-new-top">New</span>
-
-                                        </div>
-                                        <div class="item-info-product ">
-                                            <h4><a href="single.html">Analog Watch</a></h4>
-                                            <div class="info-product-price">
-                                                <span class="item_price">$320.99</span>
-                                                <del>$489.71</del>
-                                            </div>
-                                            <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-                                                <form action="#" method="post">
-                                                    <fieldset>
-                                                        <input type="hidden" name="cmd" value="_cart" />
-                                                        <input type="hidden" name="add" value="1" />
-                                                        <input type="hidden" name="business" value=" " />
-                                                        <input type="hidden" name="item_name" value="Analog Watch" />
-                                                        <input type="hidden" name="amount" value="30.99" />
-                                                        <input type="hidden" name="discount_amount" value="1.00" />
-                                                        <input type="hidden" name="currency_code" value="USD" />
-                                                        <input type="hidden" name="return" value=" " />
-                                                        <input type="hidden" name="cancel_return" value=" " />
-                                                        <input type="submit" name="submit" value="Add to cart" class="button" />
-                                                    </fieldset>
-                                                </form>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 product-men">
-                                    <div class="men-pro-item simpleCart_shelfItem">
-                                        <div class="men-thumb-item">
-                                            <img src="images/w7.jpg" alt="" class="pro-image-front">
-                                            <img src="images/w7.jpg" alt="" class="pro-image-back">
-                                            <div class="men-cart-pro">
-                                                <div class="inner-men-cart-pro">
-                                                    <a href="single.html" class="link-product-add-cart">Quick View</a>
-                                                </div>
-                                            </div>
-                                            <span class="product-new-top">New</span>
-
-                                        </div>
-                                        <div class="item-info-product ">
-                                            <h4><a href="single.html">Ankle Length Socks</a></h4>
-                                            <div class="info-product-price">
-                                                <span class="item_price">$100.99</span>
-                                                <del>$159.71</del>
-                                            </div>
-                                            <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-                                                <form action="#" method="post">
-                                                    <fieldset>
-                                                        <input type="hidden" name="cmd" value="_cart" />
-                                                        <input type="hidden" name="add" value="1" />
-                                                        <input type="hidden" name="business" value=" " />
-                                                        <input type="hidden" name="item_name" value="Ankle Length Socks" />
-                                                        <input type="hidden" name="amount" value="30.99" />
-                                                        <input type="hidden" name="discount_amount" value="1.00" />
-                                                        <input type="hidden" name="currency_code" value="USD" />
-                                                        <input type="hidden" name="return" value=" " />
-                                                        <input type="hidden" name="cancel_return" value=" " />
-                                                        <input type="submit" name="submit" value="Add to cart" class="button" />
-                                                    </fieldset>
-                                                </form>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 product-men">
-                                    <div class="men-pro-item simpleCart_shelfItem">
-                                        <div class="men-thumb-item">
-                                            <img src="images/w8.jpg" alt="" class="pro-image-front">
-                                            <img src="images/w8.jpg" alt="" class="pro-image-back">
-                                            <div class="men-cart-pro">
-                                                <div class="inner-men-cart-pro">
-                                                    <a href="single.html" class="link-product-add-cart">Quick View</a>
-                                                </div>
-                                            </div>
-                                            <span class="product-new-top">New</span>
-
-                                        </div>
-                                        <div class="item-info-product ">
-                                            <h4><a href="single.html">Reebok Women's Tights</a></h4>
-                                            <div class="info-product-price">
-                                                <span class="item_price">$130.99</span>
-                                                <del>$169.71</del>
-                                            </div>
-                                            <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-                                                <form action="#" method="post">
-                                                    <fieldset>
-                                                        <input type="hidden" name="cmd" value="_cart" />
-                                                        <input type="hidden" name="add" value="1" />
-                                                        <input type="hidden" name="business" value=" " />
-                                                        <input type="hidden" name="item_name" value="Reebok Women's Tights" />
-                                                        <input type="hidden" name="amount" value="30.99" />
-                                                        <input type="hidden" name="discount_amount" value="1.00" />
-                                                        <input type="hidden" name="currency_code" value="USD" />
-                                                        <input type="hidden" name="return" value=" " />
-                                                        <input type="hidden" name="cancel_return" value=" " />
-                                                        <input type="submit" name="submit" value="Add to cart" class="button" />
-                                                    </fieldset>
-                                                </form>
-                                            </div>
-
                                         </div>
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>
+                            </div>
+                            <div ng-if="!hasResultt">
+                                loading
                             </div>
                             <!--//tab_two-->
                             <div class="tab3">

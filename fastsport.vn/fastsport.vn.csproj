@@ -305,6 +305,7 @@
     <Content Include="js\Constant\HostConfig.js" />
     <Content Include="js\Controllers\ProductDetail.js" />
     <Content Include="js\Controllers\Top8_Men_News_Ctrl.js" />
+    <Content Include="js\Controllers\Top8_Women_News.js" />
     <Content Include="js\easy-responsive-tabs.js" />
     <Content Include="js\Factories\factory.js" />
     <Content Include="js\Factories\ProductService.js" />
