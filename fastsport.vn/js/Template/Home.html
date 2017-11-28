@@ -1,4 +1,18 @@
-﻿  <!-- script for responsive tabs -->
+﻿ <!-- cart-js -->
+<script src="js/minicart.min.js"></script>
+<script>
+    // Mini Cart
+    paypal.minicart.render({
+        action: '#'
+    });
+
+    if (~window.location.search.indexOf('reset=true')) {
+        paypal.minicart.reset();
+    }
+</script>
+
+<!-- //cart-js --> 
+ <!-- script for responsive tabs -->
 <script src="js/easy-responsive-tabs.js"></script>
 <script>
     $(document).ready(function () {
@@ -82,11 +96,11 @@
             </div>
         </div>
     </div>
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <a class="left carousel-control" data-target="#myCarousel" role="button" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
     </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <a class="right carousel-control" data-target="#myCarousel" role="button" data-slide="next">
         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
     </a>
@@ -239,26 +253,62 @@
 
                                         </div>
                                         <div class="item-info-product ">
-                                            <h4><a href="single.html">{{i.Name}}</a></h4>
+                                            <h4><a ng-href="#!/Home/Detail/{{i.ID}}">{{i.Name}}</a></h4>
                                             <div class="info-product-price">
                                                 <span class="item_price">{{i.Gia}}</span>
                                                 <del>{{i.Sale_off}}</del>
                                             </div>
                                             <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
-                                                <form action="#" method="post">
+                                                <!--<form action="#" method="post">
                                                     <fieldset>
                                                         <input type="hidden" name="cmd" value="_cart" />
                                                         <input type="hidden" name="add" value="1" />
                                                         <input type="hidden" name="business" value=" " />
-                                                        <input type="hidden" name="item_name" value="Formal Blue Shirt" />
-                                                        <input type="hidden" name="amount" value="30.99" />
-                                                        <input type="hidden" name="discount_amount" value="1.00" />
+                                                        <input type="hidden" name="item_name" value="{{i.Name}}" />
+                                                        <input type="hidden" name="amount" value="{{i.Gia}}" />
+                                                        <input type="hidden" name="discount_amount" value="{{i.Sale_off}}" />
                                                         <input type="hidden" name="currency_code" value="USD" />
                                                         <input type="hidden" name="return" value=" " />
                                                         <input type="hidden" name="cancel_return" value=" " />
                                                         <input type="submit" name="submit" value="THÊM VÀO GIỎ HÀNG" class="button" />
                                                     </fieldset>
-                                                </form>
+                                                </form>-->
+                                                <input  ng-click="addToCart(i)" data-toggle="modal" data-target="#cart" value="THÊM VÀO GIỎ HÀNG" class="button text-center" />
+                                            </div>
+
+                                            <!--Cart Modal-->
+                                            <div class="modal fade" id="cart" role="dialog">
+                                                <div class="modal-dialog">
+
+                                                    <!-- Modal content-->
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                            <h4 class="modal-title">Giỏ Hàng</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                           
+                                                            <div >
+                                                                <ul>
+                                                                    <li ng-repeat="i in cart">
+                                                                        <div class="row">
+                                                                            <div class="col-md-7"> {{i.name}}</div>
+                                                                            <div class="col-md-2">{{i.quantity}}</div>
+                                                                            <div class="col-md-1">X</div>
+                                                                            <div class="col-md-2">{{i.price}}</div>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                                
+                                                                
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
                                             </div>
 
                                         </div>
@@ -1234,4 +1284,5 @@
         <a class="hvr-outline-out button2" href="single.html">Shop Now </a>
     </div>
 </div>
+
 <!-- //we-offer -->
